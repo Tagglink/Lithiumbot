@@ -1,0 +1,43 @@
+{
+  "version": "1.0.0-*",
+  "description": "DisLiF Bot",
+  "authors": [ "lithiumfluorine" ],
+  "tags": [ "" ],
+  "projectUrl": "https://github.com/lithiumfluorine/DisLiF",
+  "licenseUrl": "http://opensource.org/licenses/MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/lithiumfluorine/DisLiF"
+  },
+
+  "compilationOptions": {
+    "emitEntryPoint": true
+  },
+
+  "tooling": {
+    "defaultNamespace": "DisLiF"
+  },
+
+  "dependencies": {
+    "Discord.Net": "0.9.0-rc3-3",
+    "Discord.Net.Commands": "0.9.0-rc3-1",
+    "Discord.Net.Modules": "0.9.0-rc3"
+  },
+
+  "commands": {
+    "start": "DisLiF"
+  },
+
+  "frameworks": {
+    "dnx451": { },
+    "dnxcore50": {
+      "dependencies": {
+        "Microsoft.CSharp": "4.0.1-beta-23516",
+        "System.Collections": "4.0.11-beta-23516",
+        "System.Console": "4.0.0-beta-23516",
+        "System.Linq": "4.0.1-beta-23516",
+        "System.Threading": "4.0.11-beta-23516"
+      }
+    }
+  }
+}

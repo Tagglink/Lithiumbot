@@ -1,14 +1,11 @@
+using System;
+using System.Threading.Tasks;
 using Discord;
 using Discord.Commands;
 using Discord.Modules;
-using Newtonsoft.Json;
-using System;
-using System.Text;
-using System.Threading.Tasks;
 using DisLiF.Modules;
 
-namespace DisLiF
-{
+namespace DisLiF {
     public class Program
     {
         public static void Main(string[] args) => new Program().Start(args);
@@ -33,12 +30,13 @@ namespace DisLiF
                 x.PrefixChar = '$';
                 x.AllowMentionPrefix = false;
                 x.HelpMode = HelpMode.Public;
+                x.ExecuteHandler = OnCommandExecuted;
+                x.ErrorHandler = OnCommandError;
             })
             .UsingModules();
 
             _client.AddModule<DinMammaModule>("DinMamma", ModuleFilter.None);
             
-
             _client.ExecuteAndWait(async () => {
                 while (true) {
                     try {
@@ -54,5 +52,27 @@ namespace DisLiF
                 }
             });
         }      
+
+        private void OnCommandExecuted(object sender, CommandEventArgs e) {
+            _client.Log.Info("Command", $"{e.Command.Text} ({e.User.Name})");
+        }
+
+        private void OnCommandError(object sender, CommandErrorEventArgs e) {
+            string msg = e.Exception?.Message;
+            if (String.IsNullOrEmpty(msg)) {
+                switch (e.ErrorType) {
+                    case CommandErrorType.BadArgCount:
+                        msg = "Invalid number of arguments.";
+                        _client.ReplyError(e, msg);
+                        break;
+                    case CommandErrorType.Exception:
+                        msg = $"An exception occured while executing command: {e.Command.Text}";
+                        break;
+                }
+            }
+            if (msg != null) {
+                _client.Log.Error("Command", msg);
+            }
+        }
     }
 }

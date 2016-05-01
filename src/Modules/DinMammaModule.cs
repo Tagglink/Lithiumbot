@@ -1,13 +1,9 @@
-﻿using Discord;
+﻿using System;
+using Discord;
 using Discord.Modules;
-using Discord.Commands;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Discord.Commands.Permissions.Levels;
 
-namespace DisLiF.Modules
-{
+namespace DisLiF.Modules {
     internal class DinMammaModule : IModule
     {
         private ModuleManager _manager;
@@ -17,27 +13,16 @@ namespace DisLiF.Modules
             _manager = manager;
             _client = manager.Client;
 
-            manager.CreateCommands("", group => {
-                group.CreateCommand("join")
-                    .Description("Requests the bot to join a given server.")
-                    .Parameter("invite url")
-                    .Do(async e => {
-                        var invite = await _client.GetInvite(e.Args[0]);
-                        if (invite == null) {
-                            await _client.Reply(e, "Invite not found. Sorry.");
-                            return;
-                        } else if (invite.IsRevoked) {
-                            await _client.Reply(e, "This invite has expired or the bot is banned from that server. Sorry.");
-                            return;
-                        }
-                        await invite.Accept();
-                        await _client.Reply(e, "Joined server.");
-                    });
+            manager.CreateCommands(String.Empty, group => {
                 group.CreateCommand("leave")
-                    .Description("Sternly tells the bot to leave the server.")
+                    .Description("Sternly tells the bot to leave the server. Requires Manage Server permission.")
                     .Do(async e => {
-                        await _client.Reply(e, "Leaving. ;_;");
-                        await e.Server.Leave();
+                        if (e.User.ServerPermissions.ManageServer) {
+                            await _client.Reply(e, "Leaving. ;_;");
+                            await e.Server.Leave();
+                        } else {
+                            await e.User.SendMessage("You don't have sufficent permissions for this command.");
+                        }
                     });
                 group.CreateCommand("dinmamma")
                     .Description("Guess three times.")
@@ -47,12 +32,19 @@ namespace DisLiF.Modules
                 group.CreateCommand("bork")
                     .Description("Bork bork bork.")
                     .Do(async e => {
-                        await e.Channel.SendMessage("BORK STRONK! GIB BORK! REMOVE FILTHY BORK!");
+                        await e.Channel.SendMessage("GIB BORK! BORK STRONK!");
                     });
+                if (!String.IsNullOrEmpty(GlobalSettings.Discord.ClientId)) {
+                    group.CreateCommand("addtoserverlink")
+                        .Description("Returns a link for adding the bot to another server.")
+                        .Do(async e => {
+                            await _client.Reply(e, $"https://discordapp.com/oauth2/authorize?&client_id={GlobalSettings.Discord.ClientId}&scope=bot&permissions=0");
+                        });
+                }
             });
         }
 
-        string[] jokes = {
+        private static readonly string[] _jokes = {
             "Din mamma är så fet att hon tar på sitt bälte med en boomerang.",
             "Din mamma är så fet att när hon har en gul regnrock på sig, så ropar folk taxi efter henne.",
             "Din mamma är så fet att betalar skatt i tre länder.",
@@ -60,9 +52,9 @@ namespace DisLiF.Modules
             "Din mamma är så fet att de hittade spår av blod i hennes Nutella-system.",
             "Din mamma är så fet att inte ens Bill Gates har råd att ge henne en fettsugning."
         };
-        private static Random rand = new Random();
+        private static Random _rand = new Random();
         private string DinMammaJoke() {
-            return jokes[rand.Next(0, jokes.Length - 1)];
+            return _jokes[_rand.Next(0, _jokes.Length - 1)];
         }
     }
 }

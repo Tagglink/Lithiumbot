@@ -31,14 +31,10 @@ namespace DisLiF
 		//Discord
 		public class DiscordSettings
 		{
-			[JsonProperty("username")]
-			public string Email;
-			[JsonProperty("password")]
-			public string Password;
             [JsonProperty("token")]
             public string Token;
-            [JsonProperty("invite")]
-            public string Invite;
+            [JsonProperty("clientid")]
+            public string ClientId;
 		}
 		[JsonProperty("discord")]
 		private DiscordSettings _discord = new DiscordSettings();

@@ -50,7 +50,8 @@ namespace DisLiF.Modules {
             "Din mamma är så fet att betalar skatt i tre länder.",
             "Din mamma är så fet att hon har ett eget postnummer.",
             "Din mamma är så fet att de hittade spår av blod i hennes Nutella-system.",
-            "Din mamma är så fet att inte ens Bill Gates har råd att ge henne en fettsugning."
+            "Din mamma är så fet att inte ens Bill Gates har råd att ge henne en fettsugning.",
+            "Din mamma är så fet att det tog slut på mörk materia i världen."
         };
         private static Random _rand = new Random();
         private string DinMammaJoke() {

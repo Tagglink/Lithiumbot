@@ -36,9 +36,16 @@ namespace DisLiF
             [JsonProperty("clientid")]
             public string ClientId;
 		}
+        public class BungieSettings {
+            [JsonProperty("apikey")]
+            public string ApiKey;
+        }
 		[JsonProperty("discord")]
 		private DiscordSettings _discord = new DiscordSettings();
+        [JsonProperty("bungie")]
+        private BungieSettings _bungie = new BungieSettings();
 		public static DiscordSettings Discord => _instance._discord;
+        public static BungieSettings Bungie => _instance._bungie;
         
 	}
 }

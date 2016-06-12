@@ -36,6 +36,7 @@ namespace DisLiF {
             .UsingModules();
 
             _client.AddModule<DinMammaModule>("DinMamma", ModuleFilter.None);
+            _client.AddModule<DestinyModule>("Destiny");
             
             _client.ExecuteAndWait(async () => {
                 while (true) {

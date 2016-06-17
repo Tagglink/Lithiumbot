@@ -35,8 +35,9 @@ namespace DisLiF {
             })
             .UsingModules();
 
-            _client.AddModule<DinMammaModule>("DinMamma", ModuleFilter.None);
-            _client.AddModule<DestinyModule>("Destiny");
+            _client.AddModule<DinMammaModule>("DinMamma", ModuleFilter.None)
+                   .AddModule<DestinyModule>("Destiny")
+                   .AddModule<OverwatchModule>("Overwatch");
             
             _client.ExecuteAndWait(async () => {
                 while (true) {
@@ -48,6 +49,7 @@ namespace DisLiF {
                     } catch (Exception ex) {
                         _client.Log.Error("Login failed", ex);
                         Console.WriteLine("Login failed: " + ex);
+                        Console.WriteLine($"Retrying in {_client.Config.FailedReconnectDelay} seconds...");
                         await Task.Delay(_client.Config.FailedReconnectDelay);
                     }
                 }

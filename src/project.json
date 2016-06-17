@@ -22,7 +22,8 @@
     "Discord.Net": "0.9.0-rc3-3",
     "Discord.Net.Commands": "0.9.0-rc3-1",
     "Discord.Net.Modules": "0.9.0-rc3",
-    "BungieSharp": "0.1.2"
+    "BungieSharp": "0.1.2",
+    "OverwatchSharp": "0.0.1"
   },
 
   "commands": {

@@ -54,6 +54,7 @@ namespace DisLiF.Modules {
         #region Command methods
         private async Task SearchDestinyPlayer(CommandEventArgs e) {
             try {
+                await e.Channel.SendIsTyping();
 
                 MembershipType memtype;
                 if (!ParsePlatform(e.GetArg("platform"), out memtype)) {
@@ -89,6 +90,7 @@ namespace DisLiF.Modules {
         }
 
         private async Task CharacterOverview (CommandEventArgs e) {
+            await e.Channel.SendIsTyping();
             MembershipType memtype;
             if (!ParsePlatform(e.GetArg("platform"), out memtype)) {
                 await _client.ReplyError(e, "Invalid platform provided. Must be `psn` or `xbox`.");
@@ -125,6 +127,7 @@ namespace DisLiF.Modules {
         }
 
         private async Task LatestActivities (CommandEventArgs e) {
+            await e.Channel.SendIsTyping();
             MembershipType memtype;
             if (!ParsePlatform(e.GetArg("platform"), out memtype)) {
                 await _client.ReplyError(e, "Invalid platform provided. Must be `psn` or `xbox`.");

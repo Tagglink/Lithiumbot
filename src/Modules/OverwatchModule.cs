@@ -36,6 +36,7 @@ namespace DisLiF.Modules
 
         private async Task Profile(CommandEventArgs e) {
             try {
+                await e.Channel.SendIsTyping();
                 var profile = await _overwatch.GetProfile(e.GetArg("tag"), (Platform)Enum.Parse(typeof(Platform), e.GetArg("platform"), true), (OverwatchSharp.Region)Enum.Parse(typeof(OverwatchSharp.Region), e.GetArg("region"), true));
                 var answer = new StringBuilder();
                 answer.Append($"{profile.Data.UserName}: ")

@@ -47,7 +47,7 @@ namespace DisLiF.Modules {
         private static readonly string[] _jokes = {
             "Din mamma är så fet att hon tar på sitt bälte med en boomerang.",
             "Din mamma är så fet att när hon har en gul regnrock på sig, så ropar folk taxi efter henne.",
-            "Din mamma är så fet att betalar skatt i tre länder.",
+            "Din mamma är så fet att hon betalar skatt i tre länder.",
             "Din mamma är så fet att hon har ett eget postnummer.",
             "Din mamma är så fet att de hittade spår av blod i hennes Nutella-system.",
             "Din mamma är så fet att inte ens Bill Gates har råd att ge henne en fettsugning.",

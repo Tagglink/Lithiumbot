@@ -46,6 +46,10 @@ namespace DisLiF.Modules {
                         .Parameter("platform")
                         .Parameter("displayName")
                         .Do(LatestActivities);
+                    g.CreateCommand("pgcr")
+                        .Description("Fetches and shows the Post Game Carnage Report for a given Instance ID.")
+                        .Parameter("instance ID")
+                        .Do(PostGameCarnageReport);
                 });
             });
             
@@ -127,7 +131,7 @@ namespace DisLiF.Modules {
         }
 
         private async Task LatestActivities (CommandEventArgs e) {
-            await e.Channel.SendIsTyping();
+            e.Channel.SendIsTyping();
             MembershipType memtype;
             if (!ParsePlatform(e.GetArg("platform"), out memtype)) {
                 await _client.ReplyError(e, "Invalid platform provided. Must be `psn` or `xbox`.");
@@ -152,8 +156,8 @@ namespace DisLiF.Modules {
             foreach (var item in activityResponse.data.activities) {
                 ActivityDefinition activity = activityResponse.definitions.activities[item.activityDetails.referenceId];
 
-                answer.Append($"    {activity.activityName}");
-                answer.AppendLine();
+                answer.Append($"    {activity.activityName}")
+                      .AppendLine();
                 answer.Append("        **Mode**: ");
                 if (item.activityDetails.activityTypeHashOverride != "0") {
                     answer.Append(activityResponse.definitions.activityTypes[item.activityDetails.activityTypeHashOverride].activityTypeName);
@@ -163,13 +167,100 @@ namespace DisLiF.Modules {
                 answer.AppendLine();
                 answer.Append($"        **KDA**: {item.values[Stats.killsDeathsAssists.ToString()].basic.displayValue}");
                 answer.AppendLine();
-                answer.Append($"        **Time**: {item.period.ToShortDateString()} {item.period.ToShortTimeString()}");
+                answer.Append($"        **Time**: {item.period.ToUniversalTime().ToShortDateString()} {item.period.ToUniversalTime().ToShortTimeString()} UTC");
+                answer.AppendLine();
+                answer.Append($"        **Instance ID**: {item.activityDetails.instanceId}");
                 answer.AppendLine();
                 answer.AppendLine();
 
             }
 
             await e.Channel.SendMessage(answer.ToString());
+        }
+
+        private async Task PostGameCarnageReport(CommandEventArgs e) {
+            try {
+                e.Channel.SendIsTyping();
+
+                var pgcr = await _bungie.GetPostGameCarnageReportRaw(e.GetArg("instance ID"));
+
+                var answer = new StringBuilder();
+
+                bool crucible = pgcr.data.activityDetails.activityTypeHashOverride != "0" && pgcr.data.activityDetails.activityTypeHashOverride != "2043403989"; // For some reason, Raids have an override. 
+                //Console.WriteLine(pgcr.data.activityDetails.activityTypeHashOverride);
+                //Console.WriteLine($"IsCrucible: {crucible}");
+
+                string subtitle;
+
+                if (crucible) {
+                    subtitle = $"{pgcr.definitions.activityTypes[pgcr.data.activityDetails.activityTypeHashOverride].activityTypeName}";
+                } else {
+                    subtitle = $"{pgcr.definitions.activityTypes[pgcr.definitions.activities[pgcr.data.activityDetails.referenceId].activityTypeHash].activityTypeName}";
+                }
+
+                answer.Append($"**{pgcr.definitions.activities[pgcr.data.activityDetails.referenceId].activityName}**, {subtitle}")
+                    .AppendLine();
+
+                answer.Append($"Period: {pgcr.data.period.ToUniversalTime().ToShortDateString()} {pgcr.data.period.ToUniversalTime().ToShortTimeString()}")
+                    .AppendLine();
+
+                if (crucible) {
+
+                    if (pgcr.data.activityDetails.activityTypeHashOverride != "3695721985" && pgcr.data.activityDetails.activityTypeHashOverride != "1066759414") {
+                    //Console.WriteLine("Assuming team based mode.");
+                        // If it isn't Rumble or SRL
+
+                        var entries = pgcr.data.entries.OrderBy(o => o.values["team"].basic.value).ThenByDescending(o => o.score.basic.value);
+                        answer.Append($"**Alpha Team**, Score: {pgcr.data.teams[0].score.basic.displayValue}")
+                            .AppendLine();
+                        bool switchedTeams = false;
+                        foreach (var entry in entries) {
+
+                            if (!switchedTeams && entry.values["team"].basic.value != 16.0) {
+                                answer.AppendLine();
+                                answer.Append($"**Bravo Team**, Score: {pgcr.data.teams[1].score.basic.displayValue}")
+                                    .AppendLine();
+                                switchedTeams = true;
+                            }
+
+                            string clantag = string.Empty; //string.IsNullOrWhiteSpace(entry.player.clanTag) ? $"[{entry.player.clanTag}]" : "";
+                            answer.Append($"        **{entry.player.destinyUserInfo.displayName}** {clantag} KD: {entry.values[Stats.killsDeathsRatio.ToString()].basic.displayValue} Score: {entry.score.basic.displayValue}")
+                                .AppendLine();
+                        }
+                    } else if (pgcr.data.activityDetails.activityTypeHashOverride == "3695721985") {
+                        //Console.WriteLine("Assuming Rumble.");
+                        // If it IS Rumble
+                        foreach (var entry in pgcr.data.entries.OrderByDescending(o => o.score.basic.value)) {
+                            answer.Append($"        **{entry.player.destinyUserInfo.displayName}** KD: {entry.values[Stats.killsDeathsRatio.ToString()].basic.displayValue} Score: {entry.score.basic.displayValue}")
+                                .AppendLine();
+                        }
+                    } else if (pgcr.data.activityDetails.activityTypeHashOverride == "1066759414") {
+                        //Console.WriteLine("Assuming SRL.");
+                        // Probably SRL.
+                        foreach (var entry in pgcr.data.entries.OrderBy(o => o.standing)) {
+                            answer.Append($"        {(int)entry.standing}. **{entry.player.destinyUserInfo.displayName}**, Time: {entry.values["raceCompletionMilliseconds"].basic.displayValue}")
+                                .AppendLine();
+                        }
+                    } else {
+                        await e.Channel.SendMessage("Error: Provided game's gamemode doesn't seem to exist. Please contact developer.");
+                    }
+                } else {
+                    foreach (var entry in pgcr.data.entries) {
+                        string clantag = string.Empty; //string.IsNullOrWhiteSpace(entry.player.clanTag) ? $"[{entry.player.clanTag}]" : "";
+                        answer.Append($"        **{entry.player.destinyUserInfo.displayName}** {clantag} Kills: {entry.values[Stats.kills.ToString()].basic.displayValue} Assists: {entry.values[Stats.assists.ToString()].basic.displayValue}")
+                            .AppendLine();
+                    }
+                }
+                answer.AppendLine()
+                    .Append($"Bungie Permalink: https://www.bungie.net/en/Legend/PGCR?instanceId?={pgcr.data.activityDetails.instanceId}")
+                    .AppendLine();
+
+                await e.Channel.SendMessage(answer.ToString());
+            } catch (Exception ex) {
+                Console.WriteLine(ex);
+                await _client.ReplyError(e, ex);
+            }
+            
         }
         #endregion
 

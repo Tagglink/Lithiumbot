@@ -2,6 +2,7 @@
 using Discord;
 using Discord.Modules;
 using Discord.Commands.Permissions.Levels;
+using System.Reflection;
 
 namespace DisLiF.Modules {
     internal class DinMammaModule : IModule
@@ -17,6 +18,7 @@ namespace DisLiF.Modules {
                 group.CreateCommand("leave")
                     .Description("Sternly tells the bot to leave the server. Requires Manage Server permission.")
                     .Do(async e => {
+                        e.Channel.SendIsTyping();
                         if (e.User.ServerPermissions.ManageServer) {
                             await _client.Reply(e, "Leaving. ;_;");
                             await e.Server.Leave();
@@ -27,17 +29,30 @@ namespace DisLiF.Modules {
                 group.CreateCommand("dinmamma")
                     .Description("Guess three times.")
                     .Do(async e => {
+                        e.Channel.SendIsTyping();
                         await e.Channel.SendMessage(DinMammaJoke());
                     });
                 group.CreateCommand("bork")
                     .Description("Bork bork bork.")
                     .Do(async e => {
+                        e.Channel.SendIsTyping();
                         await e.Channel.SendMessage("GIB BORK! BORK STRONK!");
+                    });
+                group.CreateCommand("debug")
+                    .Description("Prints versions of used libraries.")
+                    .Do(async e => {
+                        e.Channel.SendIsTyping();
+                        Assembly BungieSharp = Assembly.GetAssembly(typeof(BungieSharp.BungieClient));
+                        Assembly OverwatchSharp = Assembly.GetAssembly(typeof(OverwatchSharp.OverwatchClient));
+
+                        string response = $"BungieSharp: {BungieSharp.GetName().Version} \nOverwatchSharp: {OverwatchSharp.GetName().Version}";
+                        await e.Channel.SendMessage(response);
                     });
                 if (!String.IsNullOrEmpty(GlobalSettings.Discord.ClientId)) {
                     group.CreateCommand("addtoserverlink")
                         .Description("Returns a link for adding the bot to another server.")
                         .Do(async e => {
+                            e.Channel.SendIsTyping();
                             await _client.Reply(e, $"https://discordapp.com/oauth2/authorize?&client_id={GlobalSettings.Discord.ClientId}&scope=bot&permissions=0");
                         });
                 }

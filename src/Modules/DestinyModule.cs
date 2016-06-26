@@ -252,7 +252,7 @@ namespace DisLiF.Modules {
                     }
                 }
                 answer.AppendLine()
-                    .Append($"Bungie Permalink: https://www.bungie.net/en/Legend/PGCR?instanceId={pgcr.data.activityDetails.instanceId}")
+                    .Append($"Bungie Permalink: <https://www.bungie.net/en/Legend/PGCR?instanceId={pgcr.data.activityDetails.instanceId}>")
                     .AppendLine();
 
                 await e.Channel.SendMessage(answer.ToString());

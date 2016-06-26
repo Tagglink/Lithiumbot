@@ -242,7 +242,7 @@ namespace DisLiF.Modules {
                                 .AppendLine();
                         }
                     } else {
-                        await e.Channel.SendMessage("Error: Provided game's gamemode doesn't seem to exist. Please contact developer.");
+                        await e.Channel.SendMessage("Error: Provided game's gamemode doesn't seem to exist. Please contact bot developer.");
                     }
                 } else {
                     foreach (var entry in pgcr.data.entries) {
@@ -252,7 +252,7 @@ namespace DisLiF.Modules {
                     }
                 }
                 answer.AppendLine()
-                    .Append($"Bungie Permalink: https://www.bungie.net/en/Legend/PGCR?instanceId?={pgcr.data.activityDetails.instanceId}")
+                    .Append($"Bungie Permalink: https://www.bungie.net/en/Legend/PGCR?instanceId={pgcr.data.activityDetails.instanceId}")
                     .AppendLine();
 
                 await e.Channel.SendMessage(answer.ToString());

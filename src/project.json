@@ -2,6 +2,7 @@
   "version": "1.0.0-*",
   "description": "DisLiF Bot",
   "authors": [ "lithiumfluorine" ],
+  "name": "DisLiF", 
 
   "packOptions": {
     "tags": [ "" ],
@@ -10,7 +11,7 @@
     "repository": {
       "type": "git",
       "url": "git://github.com/lithiumfluorine/DisLiF"
-    },
+    }
   },
 
   "buildOptions": {

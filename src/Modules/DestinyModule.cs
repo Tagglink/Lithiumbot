@@ -58,7 +58,7 @@ namespace DisLiF.Modules {
         #region Command methods
         private async Task SearchDestinyPlayer(CommandEventArgs e) {
             try {
-                await e.Channel.SendIsTyping();
+                e.Channel.SendIsTyping();
 
                 MembershipType memtype;
                 if (!ParsePlatform(e.GetArg("platform"), out memtype)) {
@@ -75,7 +75,8 @@ namespace DisLiF.Modules {
                 }
                 await e.Channel.SendMessage(reply.ToString());
             } catch (Exception ex) {
-                await _client.ReplyError(e, ("```\n" + ex.ToString() + "\n```"));
+                Console.WriteLine(ex);
+                await _client.ReplyError(e, ex);
             }
         }
 
@@ -94,88 +95,104 @@ namespace DisLiF.Modules {
         }
 
         private async Task CharacterOverview (CommandEventArgs e) {
-            await e.Channel.SendIsTyping();
-            MembershipType memtype;
-            if (!ParsePlatform(e.GetArg("platform"), out memtype)) {
-                await _client.ReplyError(e, "Invalid platform provided. Must be `psn` or `xbox`.");
-                return;
-            }
+            try {
+                e.Channel.SendIsTyping();
+                MembershipType memtype;
+                if (!ParsePlatform(e.GetArg("platform"), out memtype)) {
+                    await _client.ReplyError(e, "Invalid platform provided. Must be `psn` or `xbox`.");
+                    return;
+                }
+                var result = (await _bungie.SearchDestinyPlayer(memtype, e.GetArg("displayName"))).First();
+                string id = result.membershipId;
+                if (String.IsNullOrWhiteSpace(id)) {
+                    await _client.ReplyError(e, $"No player by name `{e.GetArg("displayName")}` found.");
+                    return;
+                }
 
-            var id = await _bungie.GetMembershipIdByDisplayName(memtype, e.GetArg("displayName"));
-            if (String.IsNullOrWhiteSpace(id)) {
-                await _client.ReplyError(e, $"No player by name `{e.GetArg("displayName")}` found.");
-                return;
-            }
-            
-            var membership = await _bungie.GetAccountSummary(memtype, id);
-            var answer = new StringBuilder();
+                var membership = await _bungie.GetAccountSummary(memtype, id);
+                var answer = new StringBuilder();
 
-            string clan;
-            //if (String.IsNullOrWhiteSpace(membership.ClanName)) {
-            //    clan = $", *{membership.ClanName}*";
-            //} else {
+                string clan;
+                //if (String.IsNullOrWhiteSpace(membership.ClanName)) {
+                //    clan = $", *{membership.ClanName}*";
+                //} else {
                 clan = String.Empty;
-            //}
+                //}
 
-            answer.Append($"{e.GetArg("displayName")}{clan}: ")
-                .AppendLine();
-            answer.Append($"Last played: {membership.Characters.First().Base.DateLastPlayed.ToShortDateString()} {membership.Characters.First().Base.DateLastPlayed.ToShortTimeString()}")
-                .AppendLine();
-            foreach (var character in membership.Characters) {
-                answer.Append("    ")
-                    .Append($"{character.Base.Race} {character.Base.Class} {character.Level}, Light: {character.Base.PowerLevel}")
+                answer.Append($"{result.displayName}{clan}: ")
                     .AppendLine();
+                answer.Append($"Last played: {membership.Characters.First().Base.DateLastPlayed.ToShortDateString()} {membership.Characters.First().Base.DateLastPlayed.ToShortTimeString()}")
+                    .AppendLine();
+                foreach (var character in membership.Characters) {
+                    answer.Append("    ")
+                        .Append($"{character.Base.Race} {character.Base.Class} {character.Level}, Light: {character.Base.PowerLevel}")
+                        .AppendLine();
+                }
+                await e.Channel.SendMessage(answer.ToString());
+            } catch (Exception ex) {
+                Console.WriteLine(ex);
+                await _client.ReplyError(e, ex);
             }
-            await e.Channel.SendMessage(answer.ToString());
-
         }
 
         private async Task LatestActivities (CommandEventArgs e) {
-            e.Channel.SendIsTyping();
-            MembershipType memtype;
-            if (!ParsePlatform(e.GetArg("platform"), out memtype)) {
-                await _client.ReplyError(e, "Invalid platform provided. Must be `psn` or `xbox`.");
-                return;
-            }
-
-            string id = await _bungie.GetMembershipIdByDisplayName(memtype, e.GetArg("displayName"));
-            if (String.IsNullOrWhiteSpace(id)) {
-                await _client.ReplyError(e, $"No player by name `{e.GetArg("displayName")}` found.");
-                return;
-            }
-
-            Membership membership = await _bungie.GetAccountSummary(memtype, id);
-            string characterId = membership.Characters.First().Base.CharacterId;
-            var activityResponse = await _bungie.GetActivityHistory(memtype, id, characterId, 3);
-
-            var answer = new StringBuilder();
-
-            answer.Append($"Latest activity for {e.GetArg("displayName")}:");
-            answer.AppendLine();
-
-            foreach (var item in activityResponse.data.activities) {
-                ActivityDefinition activity = activityResponse.definitions.activities[item.activityDetails.referenceId];
-
-                answer.Append($"    {activity.activityName}")
-                      .AppendLine();
-                answer.Append("        **Mode**: ");
-                if (item.activityDetails.activityTypeHashOverride != "0") {
-                    answer.Append(activityResponse.definitions.activityTypes[item.activityDetails.activityTypeHashOverride].activityTypeName);
-                } else {
-                    answer.Append(activityResponse.definitions.activityTypes[activity.activityTypeHash].activityTypeName);
+            try {
+                e.Channel.SendIsTyping();
+                MembershipType memtype;
+                if (!ParsePlatform(e.GetArg("platform"), out memtype)) {
+                    await _client.ReplyError(e, "Invalid platform provided. Must be `psn` or `xbox`.");
+                    return;
                 }
-                answer.AppendLine();
-                answer.Append($"        **KDA**: {item.values[Stats.killsDeathsAssists.ToString()].basic.displayValue}");
-                answer.AppendLine();
-                answer.Append($"        **Time**: {item.period.ToUniversalTime().ToShortDateString()} {item.period.ToUniversalTime().ToShortTimeString()} UTC");
-                answer.AppendLine();
-                answer.Append($"        **Instance ID**: {item.activityDetails.instanceId}");
-                answer.AppendLine();
+
+                string id = await _bungie.GetMembershipIdByDisplayName(memtype, e.GetArg("displayName"));
+                if (String.IsNullOrWhiteSpace(id)) {
+                    await _client.ReplyError(e, $"No player by name `{e.GetArg("displayName")}` found.");
+                    return;
+                }
+
+                Membership membership = await _bungie.GetAccountSummary(memtype, id);
+                string characterId = membership.Characters.First().Base.CharacterId;
+                var activityResponse = await _bungie.GetActivityHistory(memtype, id, characterId, 3);
+
+                var answer = new StringBuilder();
+
+                answer.Append($"Latest activity for {e.GetArg("displayName")}:");
                 answer.AppendLine();
 
+                foreach (var item in activityResponse.data.activities) {
+                    ActivityDefinition activity = activityResponse.definitions.activities[item.activityDetails.referenceId];
+
+                    bool crucible = item.activityDetails.activityTypeHashOverride != "0" && item.activityDetails.activityTypeHashOverride != "2043403989"; // For some reason, Raids have an override. 
+
+                    answer.Append($"    {activity.activityName}")
+                          .AppendLine();
+                    answer.Append("        **Mode**: ");
+                    if (crucible) {
+                        answer.Append(activityResponse.definitions.activityTypes[item.activityDetails.activityTypeHashOverride].activityTypeName);
+                    } else {
+                        answer.Append(activityResponse.definitions.activityTypes[activity.activityTypeHash].activityTypeName);
+                    }
+                    answer.AppendLine();
+                    answer.Append($"        **KDA**: {item.values[Stats.killsDeathsAssists.ToString()].basic.displayValue}");
+                    answer.AppendLine();
+                    try {
+                        if (crucible)
+                            answer.Append($"        **Result**: {item.values["standing"].basic.displayValue}")
+                                .AppendLine();
+                    } catch { }
+                    answer.Append($"        **Time**: {item.period.ToUniversalTime().ToShortDateString()} {item.period.ToUniversalTime().ToShortTimeString()} UTC");
+                    answer.AppendLine();
+                    answer.Append($"        **Instance ID**: {item.activityDetails.instanceId}");
+                    answer.AppendLine();
+                    answer.AppendLine();
+
+                }
+
+                await e.Channel.SendMessage(answer.ToString());
+            } catch (Exception ex) {
+                Console.WriteLine(ex);
+                await _client.ReplyError(e, ex);
             }
-
-            await e.Channel.SendMessage(answer.ToString());
         }
 
         private async Task PostGameCarnageReport(CommandEventArgs e) {

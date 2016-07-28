@@ -5,7 +5,8 @@ using Discord.Commands.Permissions.Levels;
 using System.Reflection;
 
 namespace DisLiF.Modules {
-    internal class DinMammaModule : IModule
+    // Separated class to keep the copypastas from cluttering up this one.
+    internal partial class DinMammaModule : IModule
     {
         private ModuleManager _manager;
         private DiscordClient _client;
@@ -27,7 +28,7 @@ namespace DisLiF.Modules {
                         }
                     });
                 group.CreateCommand("dinmamma")
-                    .Description("Guess three times.")
+                    .Description("Gissa tre gånger.")
                     .Do(async e => {
                         e.Channel.SendIsTyping();
                         await e.Channel.SendMessage(DinMammaJoke());
@@ -48,6 +49,25 @@ namespace DisLiF.Modules {
                         string response = $"BungieSharp: {BungieSharp.GetName().Version} \nOverwatchSharp: {OverwatchSharp.GetName().Version}";
                         await e.Channel.SendMessage(response);
                     });
+                group.CreateCommand("slowclap")
+                    .Description("Great. Just great. That was really, really great.")
+                    .Do(async e => {
+                        e.Channel.SendIsTyping();
+                        await e.Channel.SendMessage("http://i.imgur.com/BOK1lew.gif");
+                    });
+                group.CreateCommand("magnumdong")
+                    .Do(async e => {
+                        e.Channel.SendIsTyping();
+                        await e.Channel.SendMessage("https://www.youtube.com/watch?v=RH5EPDkmyFw");
+                    });
+                group.CreateCommand("copypasta")
+                    .Alias("copypaste", "pasta")
+                    .Description("Get some fresh copypasta!")
+                    .Do(async e => {
+                        e.Channel.SendIsTyping();
+                        await e.Channel.SendMessage(Copypasta());
+                    });
+                    
                 if (!String.IsNullOrEmpty(GlobalSettings.Discord.ClientId)) {
                     group.CreateCommand("addtoserverlink")
                         .Description("Returns a link for adding the bot to another server.")
@@ -71,6 +91,12 @@ namespace DisLiF.Modules {
         private static Random _rand = new Random();
         private string DinMammaJoke() {
             return _jokes[_rand.Next(0, _jokes.Length - 1)];
+        }
+        /// <summary>
+        /// Pulls a copypasta from <see cref="_copypasta"/>
+        /// </summary>
+        private string Copypasta() {
+            return _copypasta[_rand.Next(0, _copypasta.Length - 1)];
         }
     }
 }

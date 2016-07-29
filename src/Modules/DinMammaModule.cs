@@ -60,7 +60,7 @@ namespace DisLiF.Modules {
                         await e.Channel.SendMessage("https://www.youtube.com/watch?v=RH5EPDkmyFw");
                     });
                 group.CreateCommand("copypasta")
-                    .Alias("copypaste", "pasta")
+                    .Alias("copypaste", "pasta", "spamerino")
                     .Description("Get some fresh copypasta!")
                     .Do(async e => {
                         //e.Channel.SendIsTyping();
@@ -89,13 +89,13 @@ namespace DisLiF.Modules {
         };
         private static Random _rand = new Random();
         private string DinMammaJoke() {
-            return _jokes[_rand.Next(0, _jokes.Length - 1)];
+            return _jokes[_rand.Next(0, _jokes.Length)];
         }
         /// <summary>
         /// Pulls a copypasta from <see cref="_copypasta"/>
         /// </summary>
         private string Copypasta() {
-            return _copypasta[_rand.Next(0, _copypasta.Length - 1)];
+            return _copypasta[_rand.Next(0, _copypasta.Length)];
         }
     }
 }

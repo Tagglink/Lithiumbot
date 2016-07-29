@@ -5,7 +5,6 @@ using Discord.Commands.Permissions.Levels;
 using System.Reflection;
 
 namespace DisLiF.Modules {
-    // Separated class to keep the copypastas from cluttering up this one.
     internal partial class DinMammaModule : IModule
     {
         private ModuleManager _manager;
@@ -19,7 +18,7 @@ namespace DisLiF.Modules {
                 group.CreateCommand("leave")
                     .Description("Sternly tells the bot to leave the server. Requires Manage Server permission.")
                     .Do(async e => {
-                        e.Channel.SendIsTyping();
+                        //e.Channel.SendIsTyping();
                         if (e.User.ServerPermissions.ManageServer) {
                             await _client.Reply(e, "Leaving. ;_;");
                             await e.Server.Leave();
@@ -30,13 +29,13 @@ namespace DisLiF.Modules {
                 group.CreateCommand("dinmamma")
                     .Description("Gissa tre gånger.")
                     .Do(async e => {
-                        e.Channel.SendIsTyping();
+                        //e.Channel.SendIsTyping();
                         await e.Channel.SendMessage(DinMammaJoke());
                     });
                 group.CreateCommand("bork")
                     .Description("Bork bork bork.")
                     .Do(async e => {
-                        e.Channel.SendIsTyping();
+                        //e.Channel.SendIsTyping();
                         await e.Channel.SendMessage("GIB BORK! BORK STRONK!");
                     });
                 group.CreateCommand("debug")
@@ -52,19 +51,19 @@ namespace DisLiF.Modules {
                 group.CreateCommand("slowclap")
                     .Description("Great. Just great. That was really, really great.")
                     .Do(async e => {
-                        e.Channel.SendIsTyping();
+                        //e.Channel.SendIsTyping();
                         await e.Channel.SendMessage("http://i.imgur.com/BOK1lew.gif");
                     });
                 group.CreateCommand("magnumdong")
                     .Do(async e => {
-                        e.Channel.SendIsTyping();
+                        //e.Channel.SendIsTyping();
                         await e.Channel.SendMessage("https://www.youtube.com/watch?v=RH5EPDkmyFw");
                     });
                 group.CreateCommand("copypasta")
                     .Alias("copypaste", "pasta")
                     .Description("Get some fresh copypasta!")
                     .Do(async e => {
-                        e.Channel.SendIsTyping();
+                        //e.Channel.SendIsTyping();
                         await e.Channel.SendMessage(Copypasta());
                     });
                     
@@ -72,7 +71,7 @@ namespace DisLiF.Modules {
                     group.CreateCommand("addtoserverlink")
                         .Description("Returns a link for adding the bot to another server.")
                         .Do(async e => {
-                            e.Channel.SendIsTyping();
+                            //e.Channel.SendIsTyping();
                             await _client.Reply(e, $"https://discordapp.com/oauth2/authorize?&client_id={GlobalSettings.Discord.ClientId}&scope=bot&permissions=0");
                         });
                 }

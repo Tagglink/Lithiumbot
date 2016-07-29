@@ -2,6 +2,7 @@
 
 namespace DisLiF.Modules {
     internal partial class DinMammaModule : IModule {
+        // Separated class to keep the copypastas from cluttering up main file.
         private static readonly string[] _copypasta = {
             @"▄█▀ █▬█ █ ▀█▀",
             @"Give a man a fire and he will be warm for a day, set a man on fire and he will be warm for the rest of his life",

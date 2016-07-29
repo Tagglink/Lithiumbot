@@ -35,9 +35,9 @@ namespace DisLiF {
             })
             .UsingModules();
 
-            _client.AddModule<DinMammaModule>("DinMamma", ModuleFilter.None)
-                   .AddModule<DestinyModule>("Destiny")
-                   .AddModule<OverwatchModule>("Overwatch");
+            _client.AddModule<DinMammaModule>("General");
+            _client.AddModule<DestinyModule>("Destiny");
+            _client.AddModule<OverwatchModule>("Overwatch");
             
             _client.ExecuteAndWait(async () => {
                 while (true) {

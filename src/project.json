@@ -23,9 +23,9 @@
   },
 
   "dependencies": {
-    "Discord.Net": "0.9.0-rc3-3",
-    "Discord.Net.Commands": "0.9.0-rc3-1",
-    "Discord.Net.Modules": "0.9.0-rc3",
+    "Discord.Net": "0.9.4",
+    "Discord.Net.Commands": "0.9.4",
+    "Discord.Net.Modules": "0.9.4",
     "BungieSharp": "0.1.3",
     "OverwatchSharp": "0.0.1"
   },
@@ -36,8 +36,6 @@
 
   "frameworks": {
     "net451": {
-      "dependencies": {
-      }
     }
   }
 }

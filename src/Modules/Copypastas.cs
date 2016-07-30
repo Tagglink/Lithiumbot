@@ -115,6 +115,120 @@ IF YOU DON'T SATAN WILL BURST INTO YOUR HOUSE AND RAPE YOUR FAMILY",
 ░░░░░░░██░░░░░█▄▄▀▀░█░░░░░░
 ░░░░░░░░▀▀█▀▀▀▀░░░░░░█░░░░░
 ░░░░░░░░░█░░░░░░░░░░░░█░░░░",
+            @"┻┳|
+┳┻|_
+┻┳| •.•) Daddy,Are The Spammers Gone?
+┳┻|⊂ﾉ
+┻┳|
+/﹋\
+(҂`_´) -NOPE,SON GET BACK IN YOUR BEDROOM
+<,︻╦╤─ ҉
+/﹋\",
+            @"You are about to get spammed with 600 dank memes. Prepare all nukes and weapons for the Great Spam War. If you can contain the amount of spam I have, you will be granted with special powers that allow you to smoke weed 200 times harder. Not only that, but you will have a laggy as fuck laptop. You know how lucky you are?????? My laptop runs at 669FPS and it never lags or is slow. YOU LUCKY SON OF A GUN. You will pay the price by me giving you a link (Which shall contain a download) which will wipe all your memory off the face of this universe and overwrite it with my own software, Memesoftlocker2.0000.0. You are so damn lucky you know that? NOT EVEN I HAVE IT SLUT. But if you were able to read up to this point congratulations, you suck. But click this link www.mymom.;;;;;;/eeeeeeee.crash; and you will be taken to a memory erase phrase. You lucky slut, but you will get the best computer software ever that makes your computer lag so bad that you can't even use it. LIKE HOW AMAZING??? Yes, I promise you this is 420% legit. But if you spread this abusive software you have EARNED I will suck you off this living universe so be careful buddy. Now, Please stop reading this message as it ends now...",
+            @"Gr8 b8, m8. I rel8, str8 appreci8, and congratul8. I r8 this b8 an 8/8. Plz no h8, I'm str8 ir8. Cr8 more, can't w8. We should convers8, I won't ber8, my number is 8888888, ask for N8. No calls l8 or out of st8. If on a d8, ask K8 to loc8. Even with a full pl8, I always have time to communic8 so don't hesit8. dont forget to medit8 and particip8 and masturb8 to allevi8 your ability to tabul8 the f8. We should meet up m8 and convers8 on how we can cre8 more gr8 b8, I'm sure everyone would appreci8, no h8. I don't mean to defl8 your hopes, but its hard to dict8 where the b8 will rel8 and we may end up with out being appreci8d, I'm sure you can rel8. We can cre8 b8 like alexander the gr8, stretch posts longer than the Nile's str8s. We'll be the captains of b8, 4chan our first m8s the growth r8 will spread to reddit and like real est8 and be a flow r8 of gr8 b8, like a blind d8 we'll coll8, meet me upst8 where we can convers8, or ice sk8 or lose w8 infl8 our hot air baloons and fly, tail g8. We could land in Kuw8, eat a soup pl8 followed by a dessert pl8 the payment r8 won't be too ir8 and hopefully our currency won't defl8. We'll head to the Israeli-St8, taker over like Herod the gr8 and b8 the jewish masses, 8 million, m8. We could interrel8 communism, thought it's past it's maturity d8, a department of st8, volunteer st8. reduce the infant mortality r8, all in the name of making gr8 b8 m8.",
+            @"_______( ͡° ͜ʖ ͡°)_▄︻̷̿┻̿═━一
+███۞███████ ]▄▄▄▄▄▄▄▄▄▄▄▄▃
+▂▄▅█████████▅▄▃▂
+I███████████████████].
+◥⊙▲⊙▲⊙▲⊙▲⊙▲⊙▲⊙◤
+stop right there",
+            @"͕͗𝔻͕͕͗͗𝕠͕͕͗͗𝕟͕͕͗͗'͕͕͗͗𝕥͕͗ ͕͗𝕥͕͕͗͗𝕒͕͕͗͗𝕝͕͕͗͗𝕜͕͗ ͕͗𝕥͕͕͗͗𝕠͕͗ ͕͗𝕞͕͕͗͗𝕖͕͗ ͕͗𝕠͕͕͗͗𝕣͕͗ ͕͗𝕞͕͕͗͗𝕪͕͗ ͕͗𝕤͕͕͗͗𝕠͕͕͗͗𝕟͕͗ ͕͗𝕖͕͕͗͗𝕧͕͕͗͗𝕖͕͕͗͗𝕣͕͗ ͕͗𝕒͕͕͗͗𝕘͕͕͗͗𝕒͕͕͗͗𝕚͕͕͗͗𝕟͕͗",
+            @"🚨🚨💩❗OH SHI💩T 🚨🚨WE HAVE A👽DANK MEMER👽 HERE👇 A ROUND OF 👏APPLAUSE👏👏 FOR THE ✔APPROVED✔✅ MEME👀👀👀 CAUSE 👉THIS GUY👈 DESERVES👍👍 THE ⤴UPARROWS⤴⬆",
+            @"░░░░██░░████████░░██░░░░░░░░░░░░░░░░░░░░░░░░ ░░██▒▒██▒▒▒▒▒▒▒▒██▒▒██░░░░░░░░░░░░░░░░░░░░░░ ░░██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██░░░░░░░░░░░░░░░░░░░░░░ ░░██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██░░░░░░░░░░░░░░░░░░░░ ██▒▒▒▒██▒▒▒▒██▒▒▒▒▒▒▒▒▒▒██░░░░░░░░░░░░░░░░░░ ██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒████░░░░░░░░░░░░░░ ██▒▒▒▒▒▒████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒████████████░░ ██▒▒██▒▒██▒▒▒▒██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██ ██▒▒▒▒████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██████░░ ██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██░░░░░░ ██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██░░░░░░ ██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██░░░░░░ ██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██░░░░░░ ░░██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██░░░░░░░░ ░░██▒▒▒▒████▒▒▒▒████████▒▒▒▒████▒▒██░░░░░░░░ ░░██▒▒▒▒████▒▒██░░░░░░██▒▒██░░██▒▒██░░░░░░░░ ░░██▒▒██░░██▒▒██░░░░░░██▒▒██░░██▒▒██░░░░░░░░ ░░░░██░░░░░░██░░░░░░░░░░██░░░░░░██░░░░░░░░░░﻿",
+            @"─────────────────────────▄▀▄  
+─────────────────────────█─█  
+─────────────────────────█─█  
+─────────────────────────█─█  
+─────────────────────────█─█  
+─────────────────────────█─█  
+─────────────────────────█─▀█▀█▄  
+─────────────────────────█──█──█  
+─────────────────────────█▄▄█──▀█  
+────────────────────────▄█──▄█▄─▀█  
+────────────────────────█─▄█─█─█─█  
+────────────────────────█──█─█─█─█  
+────────────────────────█──█─█─█─█  
+────▄█▄──▄█▄────────────█──▀▀█─█─█  
+──▄█████████────────────▀█───█─█▄▀  
+─▄███████████────────────██──▀▀─█  
+▄█████████████────────────█─────█  
+██████████───▀▀█▄─────────▀█────█  
+████████───▀▀▀──█──────────█────█  
+██████───────██─▀█─────────█────█  
+████──▄──────────▀█────────█────█ Look son!  
+███──█──────▀▀█───▀█───────█────█ A Retard!  
+███─▀─██──────█────▀█──────█────█  
+███─────────────────▀█─────█────█  
+███──────────────────█─────█────█  
+███─────────────▄▀───█─────█────█  
+████─────────▄▄██────█▄────█────█  
+████────────██████────█────█────█  
+█████────█──███████▀──█───▄█▄▄▄▄█  
+██▀▀██────▀─██▄──▄█───█───█─────█  
+██▄──────────██████───█───█─────█  
+─██▄────────────▄▄────█───█─────█  
+─███████─────────────▄█───█─────█  
+──██████─────────────█───█▀─────█  
+──▄███████▄─────────▄█──█▀──────█  
+─▄█─────▄▀▀▀█───────█───█───────█  
+▄█────────█──█────▄███▀▀▀▀──────█  
+█──▄▀▀────────█──▄▀──█──────────█  
+█────█─────────█─────█──────────█  
+█────────▀█────█─────█─────────██  
+█───────────────█──▄█▀─────────█  
+█──────────██───█▀▀▀───────────█  
+█───────────────█──────────────█  
+█▄─────────────██──────────────█  
+─█▄────────────█───────────────█  
+──██▄────────▄███▀▀▀▀▀▄────────█  
+─█▀─▀█▄────────▀█──────▀▄──────█  
+─█────▀▀▀▀▄─────█────────▀─────█  
+─█─────────▀▄──▀───────────────█  ",
+            @"卐 卐 卐 卐 卐 卐 卐 卐 卐 卐 卐 卐 卐 卐 卐 卐 卐 卐 卐 卐
+ Repost this windmill of friendship if you think 
+
+     Europe should embrace racial diversity 
+卐 卐 卐 卐 卐 卐 卐 卐 卐 卐 卐 卐 卐 卐 卐 卐 卐 卐 卐 卐",
+            @"Omg hai ___^ I’m anon-san and I absolutely luuuv @__@ anime <3 and my fav is naurto!!! Okies so anyways, im going to tell you about the BEST day of my life when I met my hot husband sasuke!! <333333333 OMFGZ HE WAS SOOOOO FREAKIN KAWAII IN PERSON!!! Supa kawaii desu!!!!!!!! ^___________________________________^
+When I walked onto Tokyo street =____=I looked up and saw…SASUKE!!!!!!!!!!!!!!! <33333333333333333333333333333333333333333333333333333333333333!!!! “ KONNICHIWA OMGZZZZZZZZZZZZZZZZ SUPA SUPA SUPA KAWAII SASUKE-SAMA!!!!!” I yelled n____n then he turned chibi then un-chibi!! he looked at me [O.O;;;;;;;;;;;] and then he saw how hot I am *___* he grabbed my hand and winked ~_^ then pulled me behind a pocky shop o_o and started to kiss me!!!!!! [OMG!!! HIS TOUNGE TASTED LIKE RAMEN!!! RLY!! >.> <.< >.< (O) (O) (O)] then I saw some baka fat bitch watching us and I could tell she was undressing him with her eyes!!!!!!! [ -___________-;;;;; OMG I COULDN’T BELIEVE IT EITHER!!! (ò_ó) (ò_ó) (ò_ó)] so I yelled “UH UH BAKA NEKO THAT’S MY MAN WHY DON’T YOU GO HOOK UP WITH NARUTO CAUSE SASUKE-SAMA LOVES ME!!! (ò_ó)” then sasuke held me close =^= and said he would only ever love me and kissed me again!!!!!!! ** (O)/ then we went to his apartment and banged all night long and made 42 babies and they all became ninjas!!!!!!!!!!!!!!! Nyaaaaa!!! (^___<) ^______________;;;;;;;;;;;;;;;;",
+            @"What's my gender? 🚺🚹❓❓Did you just 😱 ask me 😂😂 what my gender 👧🏽👦🏽 was❓❗️Oh my god, you are LITERALLY 👋🏻 the most IGNORANT 💩 AND ILLTERATE 📚📚📚 ❌❌ FUCK I have EVER seen👀👀👀 browsing before 😂😂😂😂😂 What gives you the RIGHT ✔️✔️ to ask me what my 🚺🚹🚺🚹 gender is? 😂😂😂 MHMM? NOTHING ❌❌ THATS WHAT ❗️❗️❗️❗️❗️❗️❗️❗️❗️Since you're SOOOOOOO curious🙇🏼🙇🏼🙇🏼🙇🏼 I'll have you know ☝🏼☝🏼☝🏼☝🏼 that I am a 🚺🚹 G E N D E R F L U I D 🚹🚺 I'm not gonna sit here ⬇️⬇️ and explain 📢📢 what that is to someone as IGNORANT 😂💩💩 as you, but I'm gonna tell you anyways ☝🏼️🙇🏼☝🏼🙇🏼☝🏼🙇🏼 Being G 🚺 E 🚹 N 🚺 D 🚹 E 🚺 R 🚹 F 🚺 L 🚹 U 🚺 I 🚹 D means that I am both M A L E 🍆💦👦🏽 (cis scum😷😷😷😷😷) and F E M A L E👧🏽👠💄🍑 ❗️❗️❗️❗️ I can swap ⬇️⬆️➡️⬅️ between these genders 👌🏻😂 as I please❗️❗️❗️❗️❗️❗️❗️ You're ignorance 😷 is literally OOZING 💦💦💦💦 out 😂😂😷😷😂😷😂😂﻿GERMER ",
+            @"( ͡° ͜ʖ ͡°)                ( ͡° ͜ʖ ͡°)
+( ͡° ͜ʖ ͡°)             ( ͡° ͜ʖ ͡°)
+( ͡° ͜ʖ ͡°)         ( ͡° ͜ʖ ͡°)
+( ͡° ͜ʖ ͡°)     ( ͡° ͜ʖ ͡°)
+( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)
+( ͡° ͜ʖ ͡°)     ( ͡° ͜ʖ ͡°)
+( ͡° ͜ʖ ͡°)         ( ͡° ͜ʖ ͡°)
+( ͡° ͜ʖ ͡°)             ( ͡° ͜ʖ ͡°)
+
+
+( ͡° ͜ʖ ͡°)                     ( ͡° ͜ʖ ͡°)
+  ( ͡° ͜ʖ ͡°)                 ( ͡° ͜ʖ ͡°)
+      ( ͡° ͜ʖ ͡°)         ( ͡° ͜ʖ ͡°)
+           ( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)
+                ( ͡° ͜ʖ ͡°)
+                ( ͡° ͜ʖ ͡°)
+                ( ͡° ͜ʖ ͡°)
+                ( ͡° ͜ʖ ͡°)
+
+
+                    ( ͡° ͜ʖ ͡°)
+            ( ͡° ͜ʖ ͡°)    ( ͡° ͜ʖ ͡°)
+      ( ͡° ͜ʖ ͡°)               ( ͡° ͜ʖ ͡°)
+  ( ͡° ͜ʖ ͡°)
+      ( ͡° ͜ʖ ͡°)
+          ( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)
+                           ( ͡° ͜ʖ ͡°)
+                                 ( ͡° ͜ʖ ͡°)
+ ( ͡° ͜ʖ ͡°)                  ( ͡° ͜ʖ ͡°)
+     ( ͡° ͜ʖ ͡°)          ( ͡° ͜ʖ ͡°)
+         ( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)﻿",
+            @"My name is Jafar
+I come from afar
+There's a bomb in my car
+Allahu Akbar",
+            @"( ͡° ͜ʖ ͡°) Every 60 seconds in Africa, a minute passes. Together we can stop this. Please spread the word ( ͡° ͜ʖ ͡°) ",
+            @"( ͡° ͜ʖ ͡°)╯╲___卐卐卐卐 Don't mind me just taking the mods out for a walk﻿",
             @"ζ༼⊙ ͟ل͜ ⊙༽ᶘ ᴀʀᴇ ᴡᴇ ʜᴜᴍᴀɴ ᴏʀ ᴀʀᴇ ᴡᴇ Cᴀɴᴄᴇʀ? ζ༼⊙ ͟ل͜ ⊙༽ᶘ",
             @"By the Nine Divines! What did you just say about me, you criminal scum? I'll have you know I graduated top of my class in the Arcane University, and I've been known to cast one hell of a fireball, and I have over 300 confirmed summons. I am trained in daedric warfare and I'm the swords master of the entire Imperial forces. You are nothing to me but just another target. I will make you beg to Akatosh as I bend you over like a common whelp, mark my words, on my oath as the Champion of Cyrodiil. You think you can come into my mind through this magic device and insult me? Think again, scum. As we speak I have every assassin and thief across all of Tamriel looking for your initial position so you better prepare for the storm atronach, you goblin. The storm atronach that wipes out the pathetic little husk you call your life. I can be anywhere, anytime, and I can kill you in over seven hundred ways, and that's just with my unarmed skill! Not only am I extensively trained in archery and horseback riding, but I have access to the entire congregation of the Thieves Guild, Dark Brotherhood, Mages Guild, and untold hordes of Daedric warriors, and I will use every one of them to banish you to the plane of Oblivion. If only you could have had the clairvoyance to see what divine retribution your little 'clever' runes were about to bring down upon you, maybe you would have held your tongue you dark skin. But you couldn't, you didn't, and now you're paying the price, you goddamn idiot. I will become the embodiment of Mehrunes Dagon, and open a portal to Oblivion the likes of which you have never seen. You're fucking dead, law breaker.",
             @"What in the name of Talos did you just say to me, you milk drinker? I'll have you know I am the Dragonborn, and I've been on numerous raids on dragons and I have over 300 dragon souls. I am trained in the Thu'um and I'm the top archer in the entire Imperial Legion. You are nothing to me but just another enemy. I will kill you with arrows the likes of which has never been seen before on Nirn, mark my words. You think you can just say that to me over the webs created by the Dwemer? Think again, milk drinker. As we speak I am contacting my Dark Brotherhood assassins across Tamriel and your hold is being traced right now so you better prepare for the Call Storm shout, milk drinker. The storm that wipes out the pathetic little thing you call Mundus. You are going to be sent to Aetherius, milk drinker. I can be at any hold, any time, and can kill you in over seven hundred ways, and that's just with my voice. Not only am I extensively trained in unarmed combat, but I have access to the entire arsenal of the Imperial Legion and I will use it to its full extent to wipe your miserable ass off the face of Mundus, you milk drinker. If only you could have known what unholy retribution your little 'clever' opinionated statement was about to bring down upon you, maybe you would have held your tongue. But you couldn't, you didn't, and now you're paying the price, you fool. I will shout fury all over you and you will drown in it. You're dead, milk drinker.",

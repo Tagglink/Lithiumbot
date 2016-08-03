@@ -85,6 +85,22 @@ namespace DisLiF.Modules {
             "Din mamma är så fet att hon har ett eget postnummer.",
             "Din mamma är så fet att de hittade spår av blod i hennes Nutella-system.",
             "Din mamma är så fet att inte ens Bill Gates har råd att ge henne en fettsugning.",
+            "Din mamma är så fet att när hon går förbi teven missar du tre avsnitt.",
+            "Din mamma är så ful att inte ens Scooby Doo kan lösa det mysteriet.",
+            "Din mamma är så fet att inte ens Dora kan utforska henne.",
+            "Din mamma är så fattig att hennes TV bara har två kanaler. PÅ & AV.",
+            "Din mamma är så fet att hennes favoritskådespelare är Kevin Bacon.",
+            "Din mamma är så ful att inspelningar av henne har varningen 'Känsliga tittare varnas'.",
+            "Din mamma är så fet att hon lämnade huset i högklackade skor och kom tillbaka i flip-flops.",
+            "Din mamma är så fet att hon satt sig på en iPhone och den blev till en iPad.",
+            "Din mamma är så fet att hon gav Dracula diabetes.",
+            "Din mamma är så fet att hon har två klockor. En för varje tidszon hon är i.",
+            "Din mamma är så fet att hon gillar långa romantiska promenader till kylskåpet.",
+            "Din mamma är så fet att hon använder Google Earth för att ta selfies.",
+            "Din mamma är så fet att när hon låg på stranden försökte Greenpeace knuffa tillbaka henne i vattnet igen.",
+            "Din mamma är så fet att när hon kliver in i en hiss MÅSTE den gå ner.",
+            "Din mamma är så fet att dom binder ett rep runt hennes axlar och drar henne genom en tunnel när dom vill tvätta den.",
+            "Din mamma är så fet att hon har en strumpa på varje tå.",
             "Din mamma är så fet att det tog slut på mörk materia i världen."
         };
         private static Random _rand = new Random();

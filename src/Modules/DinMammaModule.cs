@@ -66,6 +66,11 @@ namespace DisLiF.Modules {
                         //e.Channel.SendIsTyping();
                         await e.Channel.SendMessage(Copypasta());
                     });
+                group.CreateCommand("triggered")
+                    .Description("PLEASE CHECK YOUR PRIVILEGE!")
+                    .Do(async e => {
+                        await e.Channel.SendMessage("I'm so Ṭ̷Ř̥̤̤̻̥̥ͧ̏ͦ̋͑͡Ɨ̘͉̲̯̹͔̿ͯͦ͋͂͡Ǥ̸̷͈͇͉̟̫͚͖͉̼̰̱̩͔̙̖̱̌͑ͥ̐ͤͧ̂͌̃ͬ͟͜ͅĠ̟͓͇̺̭̮̇̄̍̃ͬͣ͂ͪ̽̃̀͜Ɇ̛ͦ̄̓ͪ̇̌̄̒̊̓̾̐͒͋ͭ̀͗̚͝҉̧͙͍̦̣̤͇͓͙̲͍̪̤̻͢ͅṜ͓̠̘̥̼̈́̌ͬ͜ͅḚ̬̯͎͉̙̉ͧ͆̕Ƌ̶");
+                    });
                     
                 if (!String.IsNullOrEmpty(GlobalSettings.Discord.ClientId)) {
                     group.CreateCommand("addtoserverlink")

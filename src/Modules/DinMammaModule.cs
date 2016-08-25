@@ -52,7 +52,7 @@ namespace DisLiF.Modules {
                     .Description("Great. Just great. That was really, really great.")
                     .Do(async e => {
                         //e.Channel.SendIsTyping();
-                        await e.Channel.SendMessage("http://i.imgur.com/BOK1lew.gif");
+                        await e.Channel.SendMessage("http://i.imgur.com/BOK1lew.gifv");
                     });
                 group.CreateCommand("magnumdong")
                     .Do(async e => {

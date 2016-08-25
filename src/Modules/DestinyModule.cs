@@ -144,7 +144,7 @@ namespace DisLiF.Modules {
                     return;
                 }
 
-                string id = await _bungie.GetMembershipIdByDisplayName(memtype, e.GetArg("displayName"));
+                string id = (await _bungie.SearchDestinyPlayer(memtype, e.GetArg("displayName"))).First().membershipId;
                 if (String.IsNullOrWhiteSpace(id)) {
                     await _client.ReplyError(e, $"No player by name `{e.GetArg("displayName")}` found.");
                     return;

@@ -3,7 +3,7 @@ using Discord.Modules;
 namespace DisLiF.Modules
 {
     //collection of SUGOI
-    internal partial class Kaori_tan : IModule
+    internal partial class DinMammaModule : IModule
     {
         private static readonly string[] _waifu = {
             @"https://images2.alphacoders.com/647/thumb-350-647172.jpg",

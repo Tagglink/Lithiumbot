@@ -50,9 +50,13 @@ namespace DisLiF.Modules {
                     });
                 group.CreateCommand("slowclap")
                     .Description("Great. Just great. That was really, really great.")
+                    .Parameter("index")
                     .Do(async e => {
                         //e.Channel.SendIsTyping();
-                        await e.Channel.SendMessage("http://i.imgur.com/BOK1lew.gifv");
+                        int index;
+                        try { index = Convert.ToInt32(e.GetArg("index")); }
+                        catch (Exception x) { index = 3498; }
+                        await e.Channel.SendMessage(Slowclap(index));
                     });
                 group.CreateCommand("magnumdong")
                     .Do(async e => {
@@ -71,6 +75,33 @@ namespace DisLiF.Modules {
                     .Do(async e => {
                         await e.Channel.SendMessage("I'm so Ṭ̷Ř̥̤̤̻̥̥ͧ̏ͦ̋͑͡Ɨ̘͉̲̯̹͔̿ͯͦ͋͂͡Ǥ̸̷͈͇͉̟̫͚͖͉̼̰̱̩͔̙̖̱̌͑ͥ̐ͤͧ̂͌̃ͬ͟͜ͅĠ̟͓͇̺̭̮̇̄̍̃ͬͣ͂ͪ̽̃̀͜Ɇ̛ͦ̄̓ͪ̇̌̄̒̊̓̾̐͒͋ͭ̀͗̚͝҉̧͙͍̦̣̤͇͓͙̲͍̪̤̻͢ͅṜ͓̠̘̥̼̈́̌ͬ͜ͅḚ̬̯͎͉̙̉ͧ͆̕Ƌ̶");
                     });
+                group.CreateCommand("rekt")
+                    .Alias("#rekt", "rektdesu")
+                    .Description("Rekking intensifies")
+                    .Do(async e => {
+                        //e.Channel.SendIsTyping();
+                        await e.Channel.SendMessage("https://media.giphy.com/media/vSR0fhtT5A9by/giphy.gif");
+                    });
+                group.CreateCommand("anime")
+                    .Description("Senpai~ Iyaaaa~~~")
+                    .Do(async e => {
+                        //e.Channel.SendIsTyping();
+                        await e.Channel.SendMessage(Anime());
+                    });
+                group.CreateCommand("waifu")
+                    .Description("Kaori Miyazono best girl")
+                    .Do(async e => {
+                        //e.Channel.SendIsTyping();
+                        await e.Channel.SendMessage(Waifu());
+                    });
+                group.CreateCommand("saltpls")
+                    .Alias("saltPLS")
+                    .Description("Apply salt (?) to burned area.")
+                    .Do(async e => {
+                        //e.Channel.SendIsTyping();
+                        await e.Channel.SendMessage("https://media.giphy.com/media/xT1XGRjmcu9mj6rUoE/giphy.gif");
+                    });
+                    
                     
                 if (!String.IsNullOrEmpty(GlobalSettings.Discord.ClientId)) {
                     group.CreateCommand("addtoserverlink")
@@ -117,6 +148,43 @@ namespace DisLiF.Modules {
         /// </summary>
         private string Copypasta() {
             return _copypasta[_rand.Next(0, _copypasta.Length)];
+        }
+
+        /// <summary>
+        /// Pulls a specific copypasta from <see cref="_slowclap"/>
+        /// or a random one if index is null
+        /// </summary>
+        private string Slowclap(int index)
+        {
+            if (index == 3498)
+                return _slowclap[_rand.Next(0, _slowclap.Length)];
+
+            index--;
+            if (index > 0 && index < _slowclap.Length)
+                return _slowclap[index];
+            else
+                return "There is no such slowclap. Please enter a number between 1 and " + _slowclap.Length;
+        }
+        /// <summary>
+        /// Pulls a SUBARASHII~ gif from <see cref="_anime"/>
+        /// </summary>
+        private string Anime()
+        {
+            return _anime[_rand.Next(0, _anime.Length)];
+        }
+        /// <summary>
+        /// Pulls a Kaori Miyazono image from <see cref="_waifu"/>
+        /// </summary>
+        private string Waifu()
+        {
+            return _waifu[_rand.Next(0, _waifu.Length)];
+        }
+        /// <summary>
+        /// Pulls a dance gif from <see cref="_dance"/>
+        /// </summary>
+        private string Dance()
+        {
+            return _dance[_rand.Next(0, _dance.Length)];
         }
     }
 }

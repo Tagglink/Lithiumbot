@@ -49,7 +49,7 @@ namespace DisLiF.Modules {
                         await e.Channel.SendMessage(response);
                     });
                 group.CreateCommand("slowclap")
-                    .Parameter("index")
+                    .Parameter("index", Discord.Commands.ParameterType.Optional)
                     .Description("Great. Just great. That was really, really great.")
                     .Do(async e => {
                         //e.Channel.SendIsTyping();
@@ -57,11 +57,6 @@ namespace DisLiF.Modules {
                         try { index = Convert.ToInt32(e.GetArg("index")); }
                         catch (Exception x) { index = -1; }
                         await e.Channel.SendMessage(Slowclap(index));
-                    });
-                group.CreateCommand("slowclap")
-                    .Description("Great. Just great. That was really, really great.")
-                    .Do(async e => {
-                        await e.Channel.SendMessage(Slowclap(-1));
                     });
                 group.CreateCommand("magnumdong")
                     .Do(async e => {

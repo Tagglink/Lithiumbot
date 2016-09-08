@@ -6,7 +6,7 @@ namespace DisLiF.Modules {
         private static readonly string[] _slowclap = {
             @"http://vignette3.wikia.nocookie.net/overwatch/images/b/b2/Reaper_slowclap.gif",
             @"http://i.imgur.com/BOK1lew.gifv",
-            @"https://giant.gfycat.com/ForsakenTalkativeAntelopegroundsquirrel.gif"
+            @"http://i3.kym-cdn.com/photos/images/newsfeed/000/816/499/2cc.gif"
         };
 
         private static readonly string[] _anime = {

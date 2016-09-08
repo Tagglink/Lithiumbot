@@ -49,14 +49,19 @@ namespace DisLiF.Modules {
                         await e.Channel.SendMessage(response);
                     });
                 group.CreateCommand("slowclap")
-                    .Description("Great. Just great. That was really, really great.")
                     .Parameter("index")
+                    .Description("Great. Just great. That was really, really great.")
                     .Do(async e => {
                         //e.Channel.SendIsTyping();
                         int index;
                         try { index = Convert.ToInt32(e.GetArg("index")); }
-                        catch (Exception x) { index = 3498; }
+                        catch (Exception x) { index = -1; }
                         await e.Channel.SendMessage(Slowclap(index));
+                    });
+                group.CreateCommand("slowclap")
+                    .Description("Great. Just great. That was really, really great.")
+                    .Do(async e => {
+                        await e.Channel.SendMessage(Slowclap(-1));
                     });
                 group.CreateCommand("magnumdong")
                     .Do(async e => {
@@ -156,7 +161,7 @@ namespace DisLiF.Modules {
         /// </summary>
         private string Slowclap(int index)
         {
-            if (index == 3498)
+            if (index == -1)
                 return _slowclap[_rand.Next(0, _slowclap.Length)];
 
             index--;

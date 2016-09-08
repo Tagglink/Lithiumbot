@@ -49,13 +49,13 @@ namespace DisLiF.Modules {
                         await e.Channel.SendMessage(response);
                     });
                 group.CreateCommand("slowclap")
+                    .Parameter("index", Discord.Commands.ParameterType.Optional)
                     .Description("Great. Just great. That was really, really great.")
-                    .Parameter("index")
                     .Do(async e => {
                         //e.Channel.SendIsTyping();
                         int index;
                         try { index = Convert.ToInt32(e.GetArg("index")); }
-                        catch (Exception x) { index = 3498; }
+                        catch (Exception x) { index = -1; }
                         await e.Channel.SendMessage(Slowclap(index));
                     });
                 group.CreateCommand("magnumdong")
@@ -156,11 +156,11 @@ namespace DisLiF.Modules {
         /// </summary>
         private string Slowclap(int index)
         {
-            if (index == 3498)
+            if (index == -1)
                 return _slowclap[_rand.Next(0, _slowclap.Length)];
 
             index--;
-            if (index > 0 && index < _slowclap.Length)
+            if (index >= 0 && index < _slowclap.Length)
                 return _slowclap[index];
             else
                 return "There is no such slowclap. Please enter a number between 1 and " + _slowclap.Length;

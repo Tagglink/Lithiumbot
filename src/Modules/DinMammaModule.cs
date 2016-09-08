@@ -101,6 +101,12 @@ namespace DisLiF.Modules {
                         //e.Channel.SendIsTyping();
                         await e.Channel.SendMessage("https://media.giphy.com/media/xT1XGRjmcu9mj6rUoE/giphy.gif");
                     });
+                group.CreateCommand("dance")
+                    .Description("Dance dance bby")
+                    .Do(async e => {
+                        //e.Channel.SendIsTyping();
+                        await e.Channel.SendMessage(Dance());
+                    });
                     
                     
                 if (!String.IsNullOrEmpty(GlobalSettings.Discord.ClientId)) {

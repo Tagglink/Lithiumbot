@@ -2,7 +2,7 @@ using Discord.Modules;
 
 namespace DisLiF.Modules {
     //collection of gifs used in DinMammaModule.cs
-    internal partial class Gifs : IModule {
+    internal partial class DinMammaModule : IModule {
         private static readonly string[] _slowclap = {
             @"http://vignette3.wikia.nocookie.net/overwatch/images/b/b2/Reaper_slowclap.gif",
             @"http://i.imgur.com/BOK1lew.gifv",

@@ -55,7 +55,7 @@ namespace DisLiF.Modules {
                         //e.Channel.SendIsTyping();
                         int index;
                         try { index = Convert.ToInt32(e.GetArg("index")); }
-                        catch (Exception e) { index = null; }
+                        catch (Exception x) { index = 3498; }
                         await e.Channel.SendMessage(Slowclap(index));
                     });
                 group.CreateCommand("magnumdong")
@@ -156,7 +156,7 @@ namespace DisLiF.Modules {
         /// </summary>
         private string Slowclap(int index)
         {
-            if (index == null)
+            if (index == 3498)
                 return _slowclap[_rand.Next(0, _slowclap.Length)];
 
             index--;

@@ -160,7 +160,7 @@ namespace DisLiF.Modules {
                 return _slowclap[_rand.Next(0, _slowclap.Length)];
 
             index--;
-            if (index > 0 && index < _slowclap.Length)
+            if (index >= 0 && index < _slowclap.Length)
                 return _slowclap[index];
             else
                 return "There is no such slowclap. Please enter a number between 1 and " + _slowclap.Length;

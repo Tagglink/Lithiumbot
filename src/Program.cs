@@ -43,7 +43,7 @@ namespace DisLiF {
                 while (true) {
                     try {
                         Console.WriteLine("Connecting to Discord...");
-                        await _client.Connect(GlobalSettings.Discord.Token);
+                        await _client.Connect(GlobalSettings.Discord.Token, TokenType.Bot);
                         Console.WriteLine("Connected.");
                         break;
                     } catch (Exception ex) {

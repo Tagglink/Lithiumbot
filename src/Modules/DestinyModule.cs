@@ -11,7 +11,7 @@ using BungieSharp;
 using BungieSharp.Enums;
 using BungieSharp.Models;
 using BungieSharp.Models.Definitions;
-using static BungieSharp.API.ResponseModels.GetActivityHistoryResponse.ActivityResponseData.ActivityData.Stat;
+using static BungieSharp.API.ResponseModels.SharedModels.Stat;
 
 namespace DisLiF.Modules {
     internal class DestinyModule : IModule {

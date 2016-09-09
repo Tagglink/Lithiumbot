@@ -3,6 +3,7 @@ using Discord;
 using Discord.Modules;
 using Discord.Commands.Permissions.Levels;
 using System.Reflection;
+using System.Diagnostics;
 
 namespace DisLiF.Modules {
     internal partial class DinMammaModule : IModule
@@ -45,7 +46,7 @@ namespace DisLiF.Modules {
                         Assembly BungieSharp = Assembly.GetAssembly(typeof(BungieSharp.BungieClient));
                         Assembly OverwatchSharp = Assembly.GetAssembly(typeof(OverwatchSharp.OverwatchClient));
 
-                        string response = $"BungieSharp: {BungieSharp.GetName().Version} \nOverwatchSharp: {OverwatchSharp.GetName().Version}";
+                        string response = $"BungieSharp: {BungieSharp.GetName().Version} \nOverwatchSharp: {OverwatchSharp.GetName().Version}\nTime since start: { (DateTime.Now - Process.GetCurrentProcess().StartTime).ToString() }";
                         await e.Channel.SendMessage(response);
                     });
                 group.CreateCommand("slowclap")
@@ -94,8 +95,9 @@ namespace DisLiF.Modules {
                         //e.Channel.SendIsTyping();
                         await e.Channel.SendMessage(Waifu());
                     });
-                group.CreateCommand("saltpls")
-                    .Alias("saltPLS")
+                group.CreateCommand("salt")
+                    .Alias("saltpls")
+                    .Alias("saltplz")
                     .Description("Apply salt (?) to burned area.")
                     .Do(async e => {
                         //e.Channel.SendIsTyping();

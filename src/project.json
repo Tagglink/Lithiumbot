@@ -2,7 +2,7 @@
   "version": "1.0.0-*",
   "description": "DisLiF Bot",
   "authors": [ "lithiumfluorine" ],
-  "name": "DisLiF", 
+  "name": "DisLiF",
 
   "packOptions": {
     "tags": [ "" ],
@@ -23,10 +23,10 @@
   },
 
   "dependencies": {
-    "Discord.Net": "0.9.4",
-    "Discord.Net.Commands": "0.9.4",
-    "Discord.Net.Modules": "0.9.4",
-    "BungieSharp": "0.1.3",
+    "Discord.Net": "0.9.5",
+    "Discord.Net.Commands": "0.9.5",
+    "Discord.Net.Modules": "0.9.5",
+    "BungieSharp": "0.1.4",
     "OverwatchSharp": "0.0.1"
   },
 

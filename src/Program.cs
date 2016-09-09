@@ -10,8 +10,8 @@ namespace DisLiF {
     {
         public static void Main(string[] args) => new Program().Start(args);
 
-        private const string AppName = "DisLiF";
-        private const string AppUrl = "https://www.github.com/lithiumfluorine/DisLiF";
+        private const string AppName = "Lithiumbot";
+        private const string AppUrl = "https://www.github.com/lithiumfluorine/Lithiumbot";
 
         private DiscordClient _client;
 

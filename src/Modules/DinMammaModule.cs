@@ -28,10 +28,14 @@ namespace DisLiF.Modules {
                         }
                     });
                 group.CreateCommand("dinmamma")
+                    .Parameter("index", Discord.Commands.ParameterType.Optional)
                     .Description("Gissa tre gånger.")
                     .Do(async e => {
                         //e.Channel.SendIsTyping();
-                        await e.Channel.SendMessage(DinMammaJoke());
+                        int index;
+                        try { index = Convert.ToInt32(e.GetArg("index")); }
+                        catch (Exception x) { index = -1; }
+                        await e.Channel.SendMessage(GetStringFromList(_jokes, index));
                     });
                 group.CreateCommand("bork")
                     .Description("Bork bork bork.")
@@ -57,7 +61,17 @@ namespace DisLiF.Modules {
                         int index;
                         try { index = Convert.ToInt32(e.GetArg("index")); }
                         catch (Exception x) { index = -1; }
-                        await e.Channel.SendMessage(Slowclap(index));
+                        await e.Channel.SendMessage(GetStringFromList(_slowclap, index));
+                    });
+                group.CreateCommand("veryfastclapperclappingatincrediblyhighspeed")
+                    .Parameter("index", Discord.Commands.ParameterType.Optional)
+                    .Description("GreatJustgreatThatwasreallyreallygreat.")
+                    .Do(async e => {
+                        //e.Channel.SendIsTyping();
+                        int index;
+                        try { index = Convert.ToInt32(e.GetArg("index")); }
+                        catch (Exception x) { index = -1; }
+                        await e.Channel.SendMessage(GetStringFromList(_fastslowclap, index));
                     });
                 group.CreateCommand("magnumdong")
                     .Do(async e => {
@@ -65,11 +79,15 @@ namespace DisLiF.Modules {
                         await e.Channel.SendMessage("https://www.youtube.com/watch?v=RH5EPDkmyFw");
                     });
                 group.CreateCommand("copypasta")
+                    .Parameter("index", Discord.Commands.ParameterType.Optional)
                     .Alias("copypaste", "pasta", "spamerino")
                     .Description("Get some fresh copypasta!")
                     .Do(async e => {
                         //e.Channel.SendIsTyping();
-                        await e.Channel.SendMessage(Copypasta());
+                        int index;
+                        try { index = Convert.ToInt32(e.GetArg("index")); }
+                        catch (Exception x) { index = -1; }
+                        await e.Channel.SendMessage(GetStringFromList(_copypasta, index));
                     });
                 group.CreateCommand("triggered")
                     .Description("PLEASE CHECK YOUR PRIVILEGE!")
@@ -78,38 +96,48 @@ namespace DisLiF.Modules {
                     });
                 group.CreateCommand("rekt")
                     .Alias("#rekt", "rektdesu")
-                    .Description("Rekking intensifies")
+                    .Description("Rekking intensifies.")
                     .Do(async e => {
                         //e.Channel.SendIsTyping();
                         await e.Channel.SendMessage("https://media.giphy.com/media/vSR0fhtT5A9by/giphy.gif");
                     });
                 group.CreateCommand("anime")
+                    .Parameter("index", Discord.Commands.ParameterType.Optional)
                     .Description("Senpai~ Iyaaaa~~~")
                     .Do(async e => {
                         //e.Channel.SendIsTyping();
-                        await e.Channel.SendMessage(Anime());
+                        int index;
+                        try { index = Convert.ToInt32(e.GetArg("index")); }
+                        catch (Exception x) { index = -1; }
+                        await e.Channel.SendMessage(GetStringFromList(_anime, index));
                     });
                 group.CreateCommand("waifu")
+                    .Parameter("index", Discord.Commands.ParameterType.Optional)
                     .Description("Kaori Miyazono best girl")
                     .Do(async e => {
                         //e.Channel.SendIsTyping();
-                        await e.Channel.SendMessage(Waifu());
+                        int index;
+                        try { index = Convert.ToInt32(e.GetArg("index")); }
+                        catch (Exception x) { index = -1; }
+                        await e.Channel.SendMessage(GetStringFromList(_waifu, index));
                     });
                 group.CreateCommand("salt")
-                    .Alias("saltpls")
-                    .Alias("saltplz")
-                    .Description("Apply salt (?) to burned area.")
+                    .Alias("saltpls", "saltplz")
+                    .Description("Gracefully sprinkle that salt.")
                     .Do(async e => {
                         //e.Channel.SendIsTyping();
                         await e.Channel.SendMessage("https://media.giphy.com/media/xT1XGRjmcu9mj6rUoE/giphy.gif");
                     });
                 group.CreateCommand("dance")
-                    .Description("Dance dance bby")
+                    .Parameter("index", Discord.Commands.ParameterType.Optional)
+                    .Description("Dance dance bby.")
                     .Do(async e => {
                         //e.Channel.SendIsTyping();
-                        await e.Channel.SendMessage(Dance());
+                        int index;
+                        try { index = Convert.ToInt32(e.GetArg("index")); }
+                        catch (Exception x) { index = -1; }
+                        await e.Channel.SendMessage(GetStringFromList(_dance, index));
                     });
-                    
                     
                 if (!String.IsNullOrEmpty(GlobalSettings.Discord.ClientId)) {
                     group.CreateCommand("addtoserverlink")
@@ -119,8 +147,33 @@ namespace DisLiF.Modules {
                             await _client.Reply(e, $"https://discordapp.com/oauth2/authorize?&client_id={GlobalSettings.Discord.ClientId}&scope=bot&permissions=0");
                         });
                 }
+
+                group.CreateCommand("help")
+                   .Description("List \"all\" commands with short descriptions.")
+                   .Do(async e => {
+                       //e.Channel.SendIsTyping();
+                       await e.Channel.SendMessage(_helpstring);
+                   });
             });
         }
+
+        private static readonly string _helpstring =
+            "``leave`` Sternly tells the bot to leave the server. Requires Manage Server permission.\n" +
+            "``dinmamma [number]`` Gissa tre gånger.\n" +
+            "``bork`` Bork bork bork.\n" +
+            "``debug`` Prints versions of used libraries.\n" +
+            "``slowclap [number]`` Great. Just great. That was really, really great.\n" +
+            "``veryfastclapperclappingatincrediblyhighspeed [number]`` GreatJustgreatThatwasreallyreallygreat.\n" +
+            "``magnumdong`` \n" +
+            "``copypasta [number]`` Get some fresh copypasta!\n" +
+            "``triggered`` PLEASE CHECK YOUR PRIVILEGE!\n" +
+            "``rekt`` Rekking intensifies.\n" + 
+            "``anime [number]`` Senpai~ Iyaaaa~~~\n" + 
+            "``waifu [number]`` Kaori Miyazono best girl\n" +
+            "``salt`` Gracefully sprinkle that salt.\n" + 
+            "``dance [number]`` Dance dance bby.\n" +
+            "``addtoserverlink`` Returns a link for adding the bot to another server.\n" + 
+            "``help`` Display this message.";
 
         private static readonly string[] _jokes = {
             "Din mamma är så fet att hon tar på sitt bälte med en boomerang.",
@@ -148,51 +201,21 @@ namespace DisLiF.Modules {
             "Din mamma är så fet att det tog slut på mörk materia i världen."
         };
         private static Random _rand = new Random();
-        private string DinMammaJoke() {
-            return _jokes[_rand.Next(0, _jokes.Length)];
-        }
-        /// <summary>
-        /// Pulls a copypasta from <see cref="_copypasta"/>
-        /// </summary>
-        private string Copypasta() {
-            return _copypasta[_rand.Next(0, _copypasta.Length)];
-        }
 
         /// <summary>
-        /// Pulls a specific copypasta from <see cref="_slowclap"/>
-        /// or a random one if index is null
+        /// Pulls a specific string from the provided list,
+        /// or a random one if index is -1
         /// </summary>
-        private string Slowclap(int index)
+        private string GetStringFromList(string[] list, int index)
         {
             if (index == -1)
-                return _slowclap[_rand.Next(0, _slowclap.Length)];
+                return list[_rand.Next(0, list.Length)];
 
             index--;
-            if (index >= 0 && index < _slowclap.Length)
-                return _slowclap[index];
+            if (index >= 0 && index < list.Length)
+                return list[index];
             else
-                return "There is no such slowclap. Please enter a number between 1 and " + _slowclap.Length;
-        }
-        /// <summary>
-        /// Pulls a SUBARASHII~ gif from <see cref="_anime"/>
-        /// </summary>
-        private string Anime()
-        {
-            return _anime[_rand.Next(0, _anime.Length)];
-        }
-        /// <summary>
-        /// Pulls a Kaori Miyazono image from <see cref="_waifu"/>
-        /// </summary>
-        private string Waifu()
-        {
-            return _waifu[_rand.Next(0, _waifu.Length)];
-        }
-        /// <summary>
-        /// Pulls a dance gif from <see cref="_dance"/>
-        /// </summary>
-        private string Dance()
-        {
-            return _dance[_rand.Next(0, _dance.Length)];
+                return "There is no such index. Please enter a number between 1 and " + list.Length + " (inclusive).";
         }
     }
 }

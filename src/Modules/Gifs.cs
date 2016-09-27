@@ -12,7 +12,7 @@ namespace DisLiF.Modules {
         private static readonly string[] _fastslowclap = {
             @"http://infomedia.orebro.se/xtogra24/ImageHosting/ezgif-2875897364.gif",
             @"http://infomedia.orebro.se/xtogra24/ImageHosting/ezgif-2567448283.gif",
-            @"http://infomedia.orebro.se/xtogra24/ImageHosting/ezgif-2875897364.gif"
+            @"http://infomedia.orebro.se/xtogra24/ImageHosting/ezgif-1667592519.gif"
         };
 
         private static readonly string[] _anime = {

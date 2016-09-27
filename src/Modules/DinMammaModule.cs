@@ -147,33 +147,8 @@ namespace DisLiF.Modules {
                             await _client.Reply(e, $"https://discordapp.com/oauth2/authorize?&client_id={GlobalSettings.Discord.ClientId}&scope=bot&permissions=0");
                         });
                 }
-
-                group.CreateCommand("help")
-                   .Description("List \"all\" commands with short descriptions.")
-                   .Do(async e => {
-                       //e.Channel.SendIsTyping();
-                       await e.Channel.SendMessage(_helpstring);
-                   });
             });
         }
-
-        private static readonly string _helpstring =
-            "``leave`` Sternly tells the bot to leave the server. Requires Manage Server permission.\n" +
-            "``dinmamma [number]`` Gissa tre gånger.\n" +
-            "``bork`` Bork bork bork.\n" +
-            "``debug`` Prints versions of used libraries.\n" +
-            "``slowclap [number]`` Great. Just great. That was really, really great.\n" +
-            "``veryfastclapperclappingatincrediblyhighspeed [number]`` GreatJustgreatThatwasreallyreallygreat.\n" +
-            "``magnumdong`` \n" +
-            "``copypasta [number]`` Get some fresh copypasta!\n" +
-            "``triggered`` PLEASE CHECK YOUR PRIVILEGE!\n" +
-            "``rekt`` Rekking intensifies.\n" + 
-            "``anime [number]`` Senpai~ Iyaaaa~~~\n" + 
-            "``waifu [number]`` Kaori Miyazono best girl\n" +
-            "``salt`` Gracefully sprinkle that salt.\n" + 
-            "``dance [number]`` Dance dance bby.\n" +
-            "``addtoserverlink`` Returns a link for adding the bot to another server.\n" + 
-            "``help`` Display this message.";
 
         private static readonly string[] _jokes = {
             "Din mamma är så fet att hon tar på sitt bälte med en boomerang.",

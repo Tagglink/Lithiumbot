@@ -9,6 +9,12 @@ namespace DisLiF.Modules {
             @"http://i3.kym-cdn.com/photos/images/newsfeed/000/816/499/2cc.gif"
         };
 
+        private static readonly string[] _fastslowclap = {
+            @"http://infomedia.orebro.se/xtogra24/ImageHosting/ezgif-2875897364.gif",
+            @"http://infomedia.orebro.se/xtogra24/ImageHosting/ezgif-2567448283.gif",
+            @"http://infomedia.orebro.se/xtogra24/ImageHosting/ezgif-1667592519.gif"
+        };
+
         private static readonly string[] _anime = {
             @"http://i.imgur.com/mmCzjnV.gif",
             @"http://i.imgur.com/T1yf1Gd.gif",
@@ -30,10 +36,10 @@ namespace DisLiF.Modules {
             @"http://daylol.com/list/wp-content/uploads/2014/02/Dance-Dance-Revolution-Show-Off.gif",
             @"https://media.giphy.com/media/OSWRJKmwUEOD6/giphy.gif",
             @"http://25.media.tumblr.com/tumblr_m4n1dkOkGA1rx32kuo1_500.gif",
-            @"vignette2.wikia.nocookie.net/adventuretimewithfinnandjake/images/5/5a/S3e7_dance_gunter.gif",
+            @"http://vignette2.wikia.nocookie.net/adventuretimewithfinnandjake/images/5/5a/S3e7_dance_gunter.gif",
             @"https://media.giphy.com/media/rCHD5w7QpKB0c/giphy.gif",
-            @"vignette3.wikia.nocookie.net/steven-universe/images/6/62/Stevonnie_Dancing.gif",
-            @"vignette3.wikia.nocookie.net/steven-universe/images/a/ae/Garnet_and_Amethyst_fusion_03.gif",
+            @"http://vignette3.wikia.nocookie.net/steven-universe/images/6/62/Stevonnie_Dancing.gif",
+            @"http://vignette3.wikia.nocookie.net/steven-universe/images/a/ae/Garnet_and_Amethyst_fusion_03.gif",
             @"http://i2.kym-cdn.com/entries/icons/original/000/004/444/Wes-dance.gif",
             @"https://m.popkey.co/72484c/A6gKp_s-200x150.gif?c=popkey-web&p=nike&i=nikeunlimited-sports&l=search&f=.gif"
         };

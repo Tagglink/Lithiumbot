@@ -3,9 +3,9 @@ using System.Threading.Tasks;
 using Discord;
 using Discord.Commands;
 using Discord.Modules;
-using DisLiF.Modules;
+using Lithiumbot.Modules;
 
-namespace DisLiF {
+namespace Lithiumbot {
     public class Program
     {
         public static void Main(string[] args) => new Program().Start(args);
@@ -38,6 +38,9 @@ namespace DisLiF {
             _client.AddModule<DinMammaModule>("General");
             _client.AddModule<DestinyModule>("Destiny");
             _client.AddModule<OverwatchModule>("Overwatch");
+
+            if (GlobalSettings.Custom.Activated)
+                _client.AddModule<CustomModule>("Custom Commands");
             
             _client.ExecuteAndWait(async () => {
                 while (true) {

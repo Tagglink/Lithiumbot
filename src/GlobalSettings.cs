@@ -7,7 +7,7 @@ using System;
 using System.IO;
 using System.Text;
 
-namespace DisLiF
+namespace Lithiumbot
 {
     public class GlobalSettings
 	{
@@ -40,12 +40,23 @@ namespace DisLiF
             [JsonProperty("apikey")]
             public string ApiKey;
         }
+
+        public class CustomCommSettings {
+            [JsonProperty("activated")]
+            public bool Activated;
+            [JsonProperty("endpoint")]
+            public string Endpoint;
+        }
+
 		[JsonProperty("discord")]
 		private DiscordSettings _discord = new DiscordSettings();
         [JsonProperty("bungie")]
         private BungieSettings _bungie = new BungieSettings();
+        [JsonProperty("customcomm")]
+        private CustomCommSettings _custom = new CustomCommSettings();
 		public static DiscordSettings Discord => _instance._discord;
         public static BungieSettings Bungie => _instance._bungie;
+        public static CustomCommSettings Custom => _instance._custom;
         
 	}
 }

@@ -1,6 +1,6 @@
 ﻿using Discord.Modules;
 
-namespace DisLiF.Modules {
+namespace Lithiumbot.Modules {
     internal partial class DinMammaModule : IModule {
         // Separated class to keep the copypastas from cluttering up main file.
         private static readonly string[] _copypasta = {

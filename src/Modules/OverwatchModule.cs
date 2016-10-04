@@ -9,7 +9,7 @@ using Discord;
 using Discord.Modules;
 using Discord.Commands;
 
-namespace DisLiF.Modules
+namespace Lithiumbot.Modules
 {
     public class OverwatchModule : IModule
     {

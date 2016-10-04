@@ -13,7 +13,7 @@ using BungieSharp.Models;
 using BungieSharp.Models.Definitions;
 using static BungieSharp.API.ResponseModels.SharedModels.Stat;
 
-namespace DisLiF.Modules {
+namespace Lithiumbot.Modules {
     internal class DestinyModule : IModule {
         private ModuleManager _manager;
         private DiscordClient _client;

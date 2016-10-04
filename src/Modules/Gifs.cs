@@ -1,6 +1,6 @@
 using Discord.Modules;
 
-namespace DisLiF.Modules {
+namespace Lithiumbot.Modules {
     //collection of gifs used in DinMammaModule.cs
     internal partial class DinMammaModule : IModule {
         private static readonly string[] _slowclap = {

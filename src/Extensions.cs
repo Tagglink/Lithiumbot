@@ -10,7 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace DisLiF
+namespace Lithiumbot
 {
     public static class Extensions
 	{

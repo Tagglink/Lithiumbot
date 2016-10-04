@@ -5,7 +5,7 @@ using Discord.Commands.Permissions.Levels;
 using System.Reflection;
 using System.Diagnostics;
 
-namespace DisLiF.Modules {
+namespace Lithiumbot.Modules {
     internal partial class DinMammaModule : IModule
     {
         private ModuleManager _manager;

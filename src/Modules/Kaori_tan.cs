@@ -1,6 +1,6 @@
 using Discord.Modules;
 
-namespace DisLiF.Modules
+namespace Lithiumbot.Modules
 {
     //collection of SUGOI
     internal partial class DinMammaModule : IModule

@@ -93,12 +93,12 @@ namespace Lithiumbot.Modules
                 commands = (await _custom.GetCommands()).ToList();
                 await e.Channel.SendMessage($"Command `{com.CommandName}` created.");
             } catch (Exception ex) {
-                await _client.ReplyError(e, $"Command couldn't be created: ```{ex.ToString()}```");
+                if (ex is CustomCommClient.CommandExistsException)
+                    await e.Channel.SendMessage($"A command by the name `{com.CommandName}` already exists.");
+                else 
+                    await _client.ReplyError(e, $"Command couldn't be created: ```{ex.ToString()}```");
                 return;
             }
-
-            //CreateCommands(_manager);
-
         }
         private async Task RemoveCommand(CommandEventArgs e) {
             e.Channel.SendIsTyping();

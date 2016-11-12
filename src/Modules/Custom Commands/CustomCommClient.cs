@@ -26,9 +26,9 @@ namespace Lithiumbot.Modules.CustomCommands
 
         public async Task<Command> AddCommand(Command com) {
             var response = await _client.PostAsync("api/commands", new StringContent(JsonConvert.SerializeObject(com), System.Text.Encoding.UTF8, "application/json") );
-            //response.EnsureSuccessStatusCode();
-            if (response.StatusCode != System.Net.HttpStatusCode.InternalServerError && response.StatusCode != System.Net.HttpStatusCode.OK)
-                throw new HttpRequestException();
+            if (response.StatusCode == System.Net.HttpStatusCode.Conflict)
+                throw new CommandExistsException();
+            response.EnsureSuccessStatusCode();
             return JsonConvert.DeserializeObject<Command>(await response.Content.ReadAsStringAsync());
         }
 
@@ -41,5 +41,10 @@ namespace Lithiumbot.Modules.CustomCommands
             _client.Dispose();
         }
 
+
+        [Serializable]
+        public class CommandExistsException : Exception {
+            public CommandExistsException() { }
+        }
     }
 }

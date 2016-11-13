@@ -1,8 +1,8 @@
 {
-  "version": "1.0.0-*",
-  "description": "DisLiF Bot",
-  "authors": [ "lithiumfluorine" ],
-  "name": "DisLiF",
+  "version": "0.10.1",
+  "description": "Lithiumbot",
+  "authors": [ "lithiumfluorine", "Tagglink"],
+  "name": "Lithiumbot",
 
   "packOptions": {
     "tags": [ "" ],
@@ -10,7 +10,7 @@
     "licenseUrl": "http://opensource.org/licenses/MIT",
     "repository": {
       "type": "git",
-      "url": "git://github.com/lithiumfluorine/DisLiF"
+      "url": "git://github.com/lithiumfluorine/Lithiumbot"
     }
   },
 
@@ -19,23 +19,18 @@
   },
 
   "tooling": {
-    "defaultNamespace": "DisLiF"
+    "defaultNamespace": "Lithiumbot"
   },
 
   "dependencies": {
-    "Discord.Net": "0.9.5",
-    "Discord.Net.Commands": "0.9.5",
-    "Discord.Net.Modules": "0.9.5",
-    "BungieSharp": "0.1.4",
-    "OverwatchSharp": "0.0.1"
-  },
-
-  "commands": {
-    "start": "DisLiF"
+    "Discord.Net": "0.9.6",
+    "Discord.Net.Commands": "0.9.6",
+    "Discord.Net.Modules": "0.9.6",
+    "BungieSharp": "0.1.6"
   },
 
   "frameworks": {
-    "net451": {
-    }
+    "net45": {}
   }
+
 }

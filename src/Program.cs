@@ -37,7 +37,7 @@ namespace Lithiumbot {
 
             _client.AddModule<DinMammaModule>("General");
             _client.AddModule<DestinyModule>("Destiny");
-            _client.AddModule<OverwatchModule>("Overwatch");
+            //_client.AddModule<OverwatchModule>("Overwatch");
 
             if (GlobalSettings.Custom.Activated)
                 _client.AddModule<CustomModule>("Custom Commands");

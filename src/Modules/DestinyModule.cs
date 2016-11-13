@@ -203,55 +203,61 @@ namespace Lithiumbot.Modules {
 
                 var answer = new StringBuilder();
 
-                bool crucible = pgcr.data.activityDetails.activityTypeHashOverride != "0" && pgcr.data.activityDetails.activityTypeHashOverride != "2043403989"; // For some reason, Raids have an override. 
-                //Console.WriteLine(pgcr.data.activityDetails.activityTypeHashOverride);
-                //Console.WriteLine($"IsCrucible: {crucible}");
+                bool crucible = pgcr.definitions.activityTypes[
+                    pgcr.definitions.activities[
+                        pgcr.data.activityDetails.referenceId
+                        ].activityTypeHash
+                    ].identifier == "ACTIVITY_TYPE_PVP_FFA";
 
-                string subtitle;
+                string subtitle = pgcr.definitions.activityTypes[pgcr.data.activityDetails.activityTypeHashOverride].activityTypeName;
 
-                if (crucible) {
-                    subtitle = $"{pgcr.definitions.activityTypes[pgcr.data.activityDetails.activityTypeHashOverride].activityTypeName}";
-                } else {
-                    subtitle = $"{pgcr.definitions.activityTypes[pgcr.definitions.activities[pgcr.data.activityDetails.referenceId].activityTypeHash].activityTypeName}";
+                answer.AppendLine($"**{pgcr.definitions.activities[pgcr.data.activityDetails.referenceId].activityName}**, {subtitle}");
+                if (pgcr.data.activityDetails.isPrivate) {
+                    answer.AppendLine("Private Match");
                 }
-
-                answer.Append($"**{pgcr.definitions.activities[pgcr.data.activityDetails.referenceId].activityName}**, {subtitle}")
-                    .AppendLine();
-
-                answer.Append($"Period: {pgcr.data.period.ToUniversalTime().ToShortDateString()} {pgcr.data.period.ToUniversalTime().ToShortTimeString()}")
-                    .AppendLine();
+                answer.AppendLine($"Period: {pgcr.data.period.ToUniversalTime().ToShortDateString()} {pgcr.data.period.ToUniversalTime().ToShortTimeString()}");
 
                 if (crucible) {
-
-                    if (pgcr.data.activityDetails.activityTypeHashOverride != "3695721985" && pgcr.data.activityDetails.activityTypeHashOverride != "1066759414") {
-                    //Console.WriteLine("Assuming team based mode.");
+                    if (pgcr.definitions.activityTypes[pgcr.data.activityDetails.activityTypeHashOverride].identifier != "PVP_RACING" &&
+                        pgcr.data.teams.Length != 0                                              
+                        ) {
+                        //Console.WriteLine("Assuming team based mode.");
                         // If it isn't Rumble or SRL
 
-                        var entries = pgcr.data.entries.OrderBy(o => o.values["team"].basic.value).ThenByDescending(o => o.score.basic.value);
-                        answer.Append($"**Alpha Team**, Score: {pgcr.data.teams[0].score.basic.displayValue}")
-                            .AppendLine();
-                        bool switchedTeams = false;
-                        foreach (var entry in entries) {
-
-                            if (!switchedTeams && entry.values["team"].basic.value != 16.0) {
-                                answer.AppendLine();
-                                answer.Append($"**Bravo Team**, Score: {pgcr.data.teams[1].score.basic.displayValue}")
-                                    .AppendLine();
-                                switchedTeams = true;
-                            }
-
+                        var entries = pgcr.data.entries;
+                        answer.AppendLine($"**Alpha Team**, Score: {pgcr.data.teams[0].score.basic.displayValue}");
+                        foreach (var entry in entries.Where(x => x.values[Stats.team.ToString()].basic.value == 16).OrderByDescending(o => o.score.basic.value)) {
                             string clantag = string.Empty; //string.IsNullOrWhiteSpace(entry.player.clanTag) ? $"[{entry.player.clanTag}]" : "";
-                            answer.Append($"        **{entry.player.destinyUserInfo.displayName}** {clantag} KD: {entry.values[Stats.killsDeathsRatio.ToString()].basic.displayValue} Score: {entry.score.basic.displayValue}")
-                                .AppendLine();
+                            answer.AppendLine($"        **{entry.player.destinyUserInfo.displayName}** {clantag} KD: {entry.values[Stats.killsDeathsRatio.ToString()].basic.displayValue} Score: {entry.score.basic.displayValue}");
                         }
-                    } else if (pgcr.data.activityDetails.activityTypeHashOverride == "3695721985") {
+                        answer.AppendLine($"**Bravo Team**, Score: {pgcr.data.teams[1].score.basic.displayValue}");
+                        foreach (var entry in entries.Where(x => x.values[Stats.team.ToString()].basic.value == 17).OrderByDescending(o => o.score.basic.value)) {
+                            string clantag = string.Empty; //string.IsNullOrWhiteSpace(entry.player.clanTag) ? $"[{entry.player.clanTag}]" : "";
+                            answer.AppendLine($"        **{entry.player.destinyUserInfo.displayName}** {clantag} KD: {entry.values[Stats.killsDeathsRatio.ToString()].basic.displayValue} Score: {entry.score.basic.displayValue}");
+                        }
+
+                        if (entries.Where(x =>
+                            x.values[Stats.team.ToString()].basic.value != 16 &&
+                            x.values[Stats.team.ToString()].basic.value != 17)
+                            .Any()) {
+
+                            answer.AppendLine("**Leavers** (probably, they're not listed on a team)");
+                            foreach (var entry in entries.Where(x =>
+                                 x.values[Stats.team.ToString()].basic.value != 16 &&
+                                 x.values[Stats.team.ToString()].basic.value != 17)
+                            ) {
+                                string clantag = string.Empty;
+                                answer.AppendLine($"        **{entry.player.destinyUserInfo.displayName}** {clantag} KD: {entry.values[Stats.killsDeathsRatio.ToString()].basic.displayValue} Score: {entry.score.basic.displayValue}");
+                            }
+                        }
+                    } else if (pgcr.data.teams.Length == 0) {
                         //Console.WriteLine("Assuming Rumble.");
                         // If it IS Rumble
                         foreach (var entry in pgcr.data.entries.OrderByDescending(o => o.score.basic.value)) {
                             answer.Append($"        **{entry.player.destinyUserInfo.displayName}** KD: {entry.values[Stats.killsDeathsRatio.ToString()].basic.displayValue} Score: {entry.score.basic.displayValue}")
                                 .AppendLine();
                         }
-                    } else if (pgcr.data.activityDetails.activityTypeHashOverride == "1066759414") {
+                    } else if (pgcr.definitions.activityTypes[pgcr.data.activityDetails.activityTypeHashOverride].identifier == "PVP_RACING") {
                         //Console.WriteLine("Assuming SRL.");
                         // Probably SRL.
                         foreach (var entry in pgcr.data.entries.OrderBy(o => o.standing)) {
@@ -263,7 +269,7 @@ namespace Lithiumbot.Modules {
                     }
                 } else {
                     foreach (var entry in pgcr.data.entries) {
-                        string clantag = string.Empty; //string.IsNullOrWhiteSpace(entry.player.clanTag) ? $"[{entry.player.clanTag}]" : "";
+                        string clantag = String.Empty; //string.IsNullOrWhiteSpace(entry.player.clanTag) ? $"[{entry.player.clanTag}]" : "";
                         answer.Append($"        **{entry.player.destinyUserInfo.displayName}** {clantag} Kills: {entry.values[Stats.kills.ToString()].basic.displayValue} Assists: {entry.values[Stats.assists.ToString()].basic.displayValue}")
                             .AppendLine();
                     }

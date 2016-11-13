@@ -46,11 +46,10 @@ namespace Lithiumbot.Modules {
                 group.CreateCommand("debug")
                     .Description("Prints versions of used libraries.")
                     .Do(async e => {
-                        e.Channel.SendIsTyping();
                         Assembly BungieSharp = Assembly.GetAssembly(typeof(BungieSharp.BungieClient));
-                        Assembly OverwatchSharp = Assembly.GetAssembly(typeof(OverwatchSharp.OverwatchClient));
+                        //Assembly OverwatchSharp = Assembly.GetAssembly(typeof(OverwatchSharp.OverwatchClient));
 
-                        string response = $"BungieSharp: {BungieSharp.GetName().Version} \nOverwatchSharp: {OverwatchSharp.GetName().Version}\nTime since start: { (DateTime.Now - Process.GetCurrentProcess().StartTime).ToString() }";
+                        string response = $"Lithiumbot Version: {Assembly.GetExecutingAssembly().GetName().Version}\nTime since start: { (DateTime.Now - Process.GetCurrentProcess().StartTime).ToString()}\nBungieSharp: {BungieSharp.GetName().Version}";
                         await e.Channel.SendMessage(response);
                     });
                 group.CreateCommand("slowclap")

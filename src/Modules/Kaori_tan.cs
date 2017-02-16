@@ -6,6 +6,7 @@ namespace Lithiumbot.Modules
     internal partial class DinMammaModule : IModule
     {
         private static readonly string[] _waifu = {
+            @"http://vignette3.wikia.nocookie.net/creepypasta/images/d/d5/Trashcan.jpg/revision/latest?cb=20120510230026",
             @"https://images2.alphacoders.com/647/thumb-350-647172.jpg",
             @"http://data.whicdn.com/images/160420827/large.png",
             @"http://orig05.deviantart.net/eeb3/f/2015/056/e/5/kaori_miyazono__render__1__by_iemelien-d8jib5f.png",

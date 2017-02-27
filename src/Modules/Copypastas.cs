@@ -308,7 +308,42 @@ The dog absorbs the memes",
  (   ͡° ͜ʖ (   ͡° ͜ʖ ͡° )
 (   ͡° ͜ʖ ͡° (   ͡° ͜ʖ ͡° )
 (   ͡° ͜ʖ ͡° )(   ͡° ͜ʖ ͡° )
-(   ͡° ͜ʖ ͡° ) (   ͡° ͜ʖ ͡° )"
+(   ͡° ͜ʖ ͡° ) (   ͡° ͜ʖ ͡° )",
+            @":zzz:　:pizza:
+   :zzz::pizza:
+　 :fries:
+　:spaghetti::zzz:
+ :pizza:　:zzz:
+:meat_on_bone:　　:zzz:
+:hamburger:　　:zzz:
+ :pizza:　:zzz:
+   :fries::zzz:
+　  :zzz:
+　:zzz: :doughnut:
+ :zzz:　 :spaghetti:
+:zzz:　　:chocolate_bar:
+:zzz:　　 :hamburger:
+ :zzz:　  :fried_shrimp:
+　:zzz::sushi:
+     :poultry_leg:
+  :cake:    :zzz:",
+            @":joy: :joy: :joy: :joy: :joy: :joy: :joy: :100: :100: :joy: :joy: :joy: :joy: :joy: :joy: :joy: :joy: 
+:joy: :joy: :joy: :joy: :joy: :joy: :100: :100: :100: :joy: :joy: :joy: :joy: :joy: :joy: :joy: :joy: 
+:joy: :joy: :joy: :joy: :joy: :100: :100: :100: :joy: :joy: :joy: :joy: :joy: :joy: :joy: :joy: :joy: 
+:joy: :joy: :joy: :joy: :100: :100: :100: :joy: :joy: :joy: :joy: :joy: :100: :joy: :joy: :joy: :joy: 
+:joy: :joy: :joy: :100: :100: :100: :joy: :joy: :joy: :joy: :joy: :100: :100: :100: :joy: :joy: :joy: 
+:joy: :joy: :joy: :joy: :100: :100: :100: :joy: :joy: :joy: :100: :100: :100: :100: :100: :joy: :joy: 
+:joy: :joy: :joy: :joy: :joy: :100: :100: :100: :joy: :100: :100: :100: :joy: :100: :100: :100: :joy: 
+:joy: :joy: :joy: :joy: :joy: :joy: :100: :100: :100: :100: :100: :joy: :joy: :joy: :100: :100: :100: 
+:100: :100: :joy: :joy: :joy: :joy: :joy: :100: :100: :100: :joy: :joy: :joy: :joy: :joy: :100: :100:
+:100: :100: :100: :joy: :joy: :joy: :100: :100: :100: :100: :100: :joy: :joy: :joy: :joy: :joy: :joy: 
+:joy: :100: :100: :100: :joy: :100: :100: :100: :joy: :100: :100: :100: :joy: :joy: :joy: :joy: :joy: 
+:joy: :joy: :100: :100: :100: :100: :100: :joy: :joy: :joy: :100: :100: :100: :joy: :joy: :joy: :joy: 
+:joy: :joy: :joy: :100: :100: :100: :joy: :joy: :joy: :joy: :joy: :100: :100: :100: :joy: :joy: :joy: 
+:joy: :joy: :joy: :joy: :100: :joy: :joy: :joy: :joy: :joy: :100: :100: :100: :joy: :joy: :joy: :joy: 
+:joy: :joy: :joy: :joy: :joy: :joy: :joy: :joy: :joy: :100: :100: :100: :joy: :joy: :joy: :joy: :joy: 
+:joy: :joy: :joy: :joy: :joy: :joy: :joy: :joy: :100: :100: :100: :joy: :joy: :joy: :joy: :joy: :joy: 
+:joy: :joy: :joy: :joy: :joy: :joy: :joy: :joy: :100: :100: :joy: :joy: :joy: :joy: :joy: :joy: :joy:"
         };
     }
 }

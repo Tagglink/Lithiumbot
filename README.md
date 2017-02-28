@@ -1,4 +1,4 @@
-# Lithiumbot
+# Lithiumbot [![Build Status](https://travis-ci.org/lithiumfluorine/Lithiumbot.svg?branch=master)](https://travis-ci.org/lithiumfluorine/Lithiumbot)
 A Discord Bot for bad jokes, dank memes and other useless features
 
 ## Features

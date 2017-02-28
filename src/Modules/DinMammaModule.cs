@@ -91,9 +91,18 @@ namespace Lithiumbot.Modules {
                         await e.Channel.SendMessage(GetStringFromList(_copypasta, index));
                     });
                 group.CreateCommand("triggered")
+                    .Parameter("person", Discord.Commands.ParameterType.Optional)
                     .Description("PLEASE CHECK YOUR PRIVILEGE!")
                     .Do(async e => {
-                        await e.Channel.SendMessage("I'm so Ṭ̷Ř̥̤̤̻̥̥ͧ̏ͦ̋͑͡Ɨ̘͉̲̯̹͔̿ͯͦ͋͂͡Ǥ̸̷͈͇͉̟̫͚͖͉̼̰̱̩͔̙̖̱̌͑ͥ̐ͤͧ̂͌̃ͬ͟͜ͅĠ̟͓͇̺̭̮̇̄̍̃ͬͣ͂ͪ̽̃̀͜Ɇ̛ͦ̄̓ͪ̇̌̄̒̊̓̾̐͒͋ͭ̀͗̚͝҉̧͙͍̦̣̤͇͓͙̲͍̪̤̻͢ͅṜ͓̠̘̥̼̈́̌ͬ͜ͅḚ̬̯͎͉̙̉ͧ͆̕Ƌ̶");
+                        var person = e.GetArg("person");
+                        if(!String.IsNullOrWhiteSpace(person))
+                        {
+                            await e.Channel.SendMessage($"{person} i̵̶͈̙̥̼̖͈͎̖̖͂ͦͩͧ̎ͣ̀͟s̢̝̜̠̱̞̖̮̠̭̤̬̭̦̒̀̉̒ͫ͐ͣͤ̾ͧ͒̿͌ͮ̂ͧ̎ͯ̌͜͠  so Ṭ̷Ř̥̤̤̻̥̥ͧ̏ͦ̋͑͡Ɨ̘͉̲̯̹͔̿ͯͦ͋͂͡Ǥ̸̷͈͇͉̟̫͚͖͉̼̰̱̩͔̙̖̱̌͑ͥ̐ͤͧ̂͌̃ͬ͟͜ͅĠ̟͓͇̺̭̮̇̄̍̃ͬͣ͂ͪ̽̃̀͜Ɇ̛ͦ̄̓ͪ̇̌̄̒̊̓̾̐͒͋ͭ̀͗̚͝҉̧͙͍̦̣̤͇͓͙̲͍̪̤̻͢ͅṜ͓̠̘̥̼̈́̌ͬ͜ͅḚ̬̯͎͉̙̉ͧ͆̕Ƌ̶");
+                        }
+                        else
+                        {
+                            await e.Channel.SendMessage("I'm so Ṭ̷Ř̥̤̤̻̥̥ͧ̏ͦ̋͑͡Ɨ̘͉̲̯̹͔̿ͯͦ͋͂͡Ǥ̸̷͈͇͉̟̫͚͖͉̼̰̱̩͔̙̖̱̌͑ͥ̐ͤͧ̂͌̃ͬ͟͜ͅĠ̟͓͇̺̭̮̇̄̍̃ͬͣ͂ͪ̽̃̀͜Ɇ̛ͦ̄̓ͪ̇̌̄̒̊̓̾̐͒͋ͭ̀͗̚͝҉̧͙͍̦̣̤͇͓͙̲͍̪̤̻͢ͅṜ͓̠̘̥̼̈́̌ͬ͜ͅḚ̬̯͎͉̙̉ͧ͆̕Ƌ̶");
+                        }
                     });
                 group.CreateCommand("rekt")
                     .Alias("#rekt", "rektdesu")

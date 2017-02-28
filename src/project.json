@@ -30,7 +30,19 @@
   },
 
   "frameworks": {
-    "net45": {}
+    "net45": {},
+    "netcoreapp1.0": {
+      "imports": [
+        "dnxcore5.0",
+        "portable-net45+win8"
+      ],
+      "dependencies": {
+        "Microsoft.NETCore.App": {
+          "type": "platform",
+          "version": "1.1.0"
+        }
+      }
+    }
   }
 
 }

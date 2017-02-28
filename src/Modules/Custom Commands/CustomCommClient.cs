@@ -41,8 +41,6 @@ namespace Lithiumbot.Modules.CustomCommands
             _client.Dispose();
         }
 
-
-        [Serializable]
         public class CommandExistsException : Exception {
             public CommandExistsException() { }
         }

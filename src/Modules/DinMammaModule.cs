@@ -43,15 +43,15 @@ namespace Lithiumbot.Modules {
                         //e.Channel.SendIsTyping();
                         await e.Channel.SendMessage("GIB BORK! BORK STRONK!");
                     });
-                group.CreateCommand("debug")
-                    .Description("Prints versions of used libraries.")
-                    .Do(async e => {
-                        Assembly BungieSharp = Assembly.GetAssembly(typeof(BungieSharp.BungieClient));
-                        //Assembly OverwatchSharp = Assembly.GetAssembly(typeof(OverwatchSharp.OverwatchClient));
+                //group.CreateCommand("debug")
+                //    .Description("Prints versions of used libraries.")
+                //    .Do(async e => {
+                //        Assembly BungieSharp = Assembly.GetAssembly(typeof(BungieSharp.BungieClient));
+                //        //Assembly OverwatchSharp = Assembly.GetAssembly(typeof(OverwatchSharp.OverwatchClient));
 
-                        string response = $"Lithiumbot Version: {Assembly.GetExecutingAssembly().GetName().Version}\nTime since start: { (DateTime.Now - Process.GetCurrentProcess().StartTime).ToString()}\nBungieSharp: {BungieSharp.GetName().Version}";
-                        await e.Channel.SendMessage(response);
-                    });
+                //        string response = $"Lithiumbot Version: {Assembly.GetExecutingAssembly().GetName().Version}\nTime since start: { (DateTime.Now - Process.GetCurrentProcess().StartTime).ToString()}\nBungieSharp: {BungieSharp.GetName().Version}";
+                //        await e.Channel.SendMessage(response);
+                //    });
                 group.CreateCommand("slowclap")
                     .Parameter("index", Discord.Commands.ParameterType.Optional)
                     .Description("Great. Just great. That was really, really great.")

@@ -9,6 +9,8 @@ using Discord.Commands;
 using Discord.Commands.Permissions;
 using Lithiumbot.Modules.CustomCommands;
 
+#pragma warning disable CS4014
+
 namespace Lithiumbot.Modules
 {
     public class CustomModule : IModule {

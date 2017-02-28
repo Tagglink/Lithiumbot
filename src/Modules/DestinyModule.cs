@@ -13,6 +13,8 @@ using BungieSharp.Models;
 using BungieSharp.Models.Definitions;
 using static BungieSharp.API.ResponseModels.SharedModels.Stat;
 
+#pragma warning disable CS4014
+
 namespace Lithiumbot.Modules {
     internal class DestinyModule : IModule {
         private ModuleManager _manager;

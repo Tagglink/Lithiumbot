@@ -1,3 +1,9 @@
 language: csharp
-mono: none
+sudo: required
+solution: ./src/src.xproj
 dotnet: 1.0.0-preview2-003121
+dist: trusty
+mono: none
+script:
+  - chmod +x .//travis_build.sh
+  - ./travis_build.sh

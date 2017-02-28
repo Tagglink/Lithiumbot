@@ -5,6 +5,8 @@ using Discord.Commands.Permissions.Levels;
 using System.Reflection;
 using System.Diagnostics;
 
+#pragma warning disable CS4014
+
 namespace Lithiumbot.Modules {
     internal partial class DinMammaModule : IModule
     {
@@ -34,7 +36,7 @@ namespace Lithiumbot.Modules {
                         //e.Channel.SendIsTyping();
                         int index;
                         try { index = Convert.ToInt32(e.GetArg("index")); }
-                        catch (Exception x) { index = -1; }
+                        catch { index = -1; }
                         await e.Channel.SendMessage(GetStringFromList(_jokes, index));
                     });
                 group.CreateCommand("bork")
@@ -59,7 +61,7 @@ namespace Lithiumbot.Modules {
                         //e.Channel.SendIsTyping();
                         int index;
                         try { index = Convert.ToInt32(e.GetArg("index")); }
-                        catch (Exception x) { index = -1; }
+                        catch { index = -1; }
                         await e.Channel.SendMessage(GetStringFromList(_slowclap, index));
                     });
                 group.CreateCommand("veryfastclapperclappingatincrediblyhighspeed")
@@ -69,7 +71,7 @@ namespace Lithiumbot.Modules {
                         //e.Channel.SendIsTyping();
                         int index;
                         try { index = Convert.ToInt32(e.GetArg("index")); }
-                        catch (Exception x) { index = -1; }
+                        catch { index = -1; }
                         await e.Channel.SendMessage(GetStringFromList(_fastslowclap, index));
                     });
                 group.CreateCommand("magnumdong")
@@ -85,7 +87,7 @@ namespace Lithiumbot.Modules {
                         //e.Channel.SendIsTyping();
                         int index;
                         try { index = Convert.ToInt32(e.GetArg("index")); }
-                        catch (Exception x) { index = -1; }
+                        catch { index = -1; }
                         await e.Channel.SendMessage(GetStringFromList(_copypasta, index));
                     });
                 group.CreateCommand("triggered")
@@ -107,7 +109,7 @@ namespace Lithiumbot.Modules {
                         //e.Channel.SendIsTyping();
                         int index;
                         try { index = Convert.ToInt32(e.GetArg("index")); }
-                        catch (Exception x) { index = -1; }
+                        catch { index = -1; }
                         await e.Channel.SendMessage(GetStringFromList(_anime, index));
                     });
                 group.CreateCommand("waifu")
@@ -117,7 +119,7 @@ namespace Lithiumbot.Modules {
                         //e.Channel.SendIsTyping();
                         int index;
                         try { index = Convert.ToInt32(e.GetArg("index")); }
-                        catch (Exception x) { index = -1; }
+                        catch { index = -1; }
                         await e.Channel.SendMessage(GetStringFromList(_waifu, index));
                     });
                 group.CreateCommand("salt")
@@ -134,7 +136,7 @@ namespace Lithiumbot.Modules {
                         //e.Channel.SendIsTyping();
                         int index;
                         try { index = Convert.ToInt32(e.GetArg("index")); }
-                        catch (Exception x) { index = -1; }
+                        catch { index = -1; }
                         await e.Channel.SendMessage(GetStringFromList(_dance, index));
                     });
                     

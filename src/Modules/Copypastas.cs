@@ -343,7 +343,8 @@ The dog absorbs the memes",
 :joy: :joy: :joy: :joy: :100: :joy: :joy: :joy: :joy: :joy: :100: :100: :100: :joy: :joy: :joy: :joy: 
 :joy: :joy: :joy: :joy: :joy: :joy: :joy: :joy: :joy: :100: :100: :100: :joy: :joy: :joy: :joy: :joy: 
 :joy: :joy: :joy: :joy: :joy: :joy: :joy: :joy: :100: :100: :100: :joy: :joy: :joy: :joy: :joy: :joy: 
-:joy: :joy: :joy: :joy: :joy: :joy: :joy: :joy: :100: :100: :joy: :joy: :joy: :joy: :joy: :joy: :joy:"
+:joy: :joy: :joy: :joy: :joy: :joy: :joy: :joy: :100: :100: :joy: :joy: :joy: :joy: :joy: :joy: :joy:",
+            @"Sodium, atomic number 11, was first isolated by Peter Dager in 1807. A chemical component of salt, he named it Na in honor of the saltiest region on earth, North America. "
         };
     }
 }

@@ -37,7 +37,7 @@ namespace Lithiumbot.Modules {
                         int index;
                         try { index = Convert.ToInt32(e.GetArg("index")); }
                         catch { index = -1; }
-                        await e.Channel.SendMessage(GetStringFromList(_jokes, index));
+                        await e.Channel.SendMessage(_jokes.GetStringFromList(index));
                     });
                 group.CreateCommand("bork")
                     .Description("Bork bork bork.")
@@ -62,7 +62,7 @@ namespace Lithiumbot.Modules {
                         int index;
                         try { index = Convert.ToInt32(e.GetArg("index")); }
                         catch { index = -1; }
-                        await e.Channel.SendMessage(GetStringFromList(_slowclap, index));
+                        await e.Channel.SendMessage(_slowclap.GetStringFromList(index));
                     });
                 group.CreateCommand("veryfastclapperclappingatincrediblyhighspeed")
                     .Parameter("index", Discord.Commands.ParameterType.Optional)
@@ -72,7 +72,7 @@ namespace Lithiumbot.Modules {
                         int index;
                         try { index = Convert.ToInt32(e.GetArg("index")); }
                         catch { index = -1; }
-                        await e.Channel.SendMessage(GetStringFromList(_fastslowclap, index));
+                        await e.Channel.SendMessage(_fastslowclap.GetStringFromList(index));
                     });
                 group.CreateCommand("magnumdong")
                     .Do(async e => {
@@ -88,7 +88,7 @@ namespace Lithiumbot.Modules {
                         int index;
                         try { index = Convert.ToInt32(e.GetArg("index")); }
                         catch { index = -1; }
-                        await e.Channel.SendMessage(GetStringFromList(_copypasta, index));
+                        await e.Channel.SendMessage(_copypasta.GetStringFromList(index));
                     });
                 group.CreateCommand("triggered")
                     .Parameter("person", Discord.Commands.ParameterType.Optional)
@@ -119,7 +119,7 @@ namespace Lithiumbot.Modules {
                         int index;
                         try { index = Convert.ToInt32(e.GetArg("index")); }
                         catch { index = -1; }
-                        await e.Channel.SendMessage(GetStringFromList(_anime, index));
+                        await e.Channel.SendMessage(_anime.GetStringFromList(index));
                     });
                 group.CreateCommand("waifu")
                     .Parameter("index", Discord.Commands.ParameterType.Optional)
@@ -129,7 +129,7 @@ namespace Lithiumbot.Modules {
                         int index;
                         try { index = Convert.ToInt32(e.GetArg("index")); }
                         catch { index = -1; }
-                        await e.Channel.SendMessage(GetStringFromList(_waifu, index));
+                        await e.Channel.SendMessage(_waifu.GetStringFromList(index));
                     });
                 group.CreateCommand("salt")
                     .Alias("saltpls", "saltplz")
@@ -146,7 +146,7 @@ namespace Lithiumbot.Modules {
                         int index;
                         try { index = Convert.ToInt32(e.GetArg("index")); }
                         catch { index = -1; }
-                        await e.Channel.SendMessage(GetStringFromList(_dance, index));
+                        await e.Channel.SendMessage(_dance.GetStringFromList(index));
                     });
                     
                 if (!String.IsNullOrEmpty(GlobalSettings.Discord.ClientId)) {
@@ -185,22 +185,23 @@ namespace Lithiumbot.Modules {
             "Din mamma är så fet att hon har en strumpa på varje tå.",
             "Din mamma är så fet att det tog slut på mörk materia i världen."
         };
-        private static Random _rand = new Random();
+    }
+}
 
-        /// <summary>
-        /// Pulls a specific string from the provided list,
-        /// or a random one if index is -1
-        /// </summary>
-        private string GetStringFromList(string[] list, int index)
-        {
-            if (index == -1)
-                return list[_rand.Next(0, list.Length)];
+static class StringArrayExtension {
+    private static Random _rand = new Random();
+    /// <summary>
+    /// Pulls a specific string from the provided list,
+    /// or a random one if index is -1
+    /// </summary>
+    public static string GetStringFromList(this string[] list, int index) {
+        if (index == -1)
+            return list[_rand.Next(0, list.Length)];
 
-            index--;
-            if (index >= 0 && index < list.Length)
-                return list[index];
-            else
-                return "There is no such index. Please enter a number between 1 and " + list.Length + " (inclusive).";
-        }
+        index--;
+        if (index >= 0 && index < list.Length)
+            return list[index];
+        else
+            return "There is no such index. Please enter a number between 1 and " + list.Length + " (inclusive).";
     }
 }

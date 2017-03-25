@@ -23,7 +23,8 @@ namespace Lithiumbot.Modules
             @"http://orig02.deviantart.net/05e1/f/2015/099/2/7/kaori_miyazono_by_minawajunichiro-d8nibpa.png",
             @"http://www.anime-planet.com/images/characters/kaori_miyazono_63006.jpg",
             @"http://pa1.narvii.com/5860/04c892a2adccfa5654e54ab14d8b059a0a11e878_hq.gif",
-            @"http://orig12.deviantart.net/f643/f/2014/346/2/c/kaori_miyazono__2__render_by_stella1994x-d89jvoe.png"
+            @"http://orig12.deviantart.net/f643/f/2014/346/2/c/kaori_miyazono__2__render_by_stella1994x-d89jvoe.png",
+            @"http://vignette2.wikia.nocookie.net/dice-the-cube-that-changes-everything/images/2/23/Mio.png/revision/20150816174141"
         };
     }
 }

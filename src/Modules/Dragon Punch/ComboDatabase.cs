@@ -11,9 +11,12 @@ namespace Lithiumbot.Modules.Dragon_Punch
         private string[] _games;
         private Dictionary<string, string[]> _characters;
         private string[] _queries;
+        private string _defaultQuery;
 
-        public ComboDatabase()
+        public ComboDatabase() // WIP
         {
+            _defaultQuery = "bnb";
+
             _games = new string[] {
                 "GGXS",     // Guilty Gear Xrd -SIGN-
                 "GGXXACPR", // Guilty Gear XX ACCENT CORE PLUS R
@@ -75,7 +78,9 @@ namespace Lithiumbot.Modules.Dragon_Punch
                 "corner",
                 "midscreen",
                 "dmg",
-                "meter"
+                "meter",
+                "bnb",
+                "all"
             };
         }
 
@@ -84,26 +89,61 @@ namespace Lithiumbot.Modules.Dragon_Punch
          *  Args:
          *  0 - game name
          *  1 - character name
-         *  2 - query string
-         *  3 - max display
+         *  2 - query string (optional)
+         *  3 - max display (optional)
          */
-        private Combo[] GetCombos(string[] args)
+        private Combo[] GetFilteredCombos(string[] args)
         {
-            Combo[] comboArray = new Combo[0];
+            List<Combo> filteredCombos = _comboDatabase;
+            int maxDisplay;
 
-            ValidateArgs(args);
+            args = StringArrayExtension.ArrayToUpperCase(args);
 
-            return comboArray;
+            if (!ValidateArgs(args))
+                return new Combo[0];
+
+            filteredCombos = ComboFilterGameName(args[0], filteredCombos);
+            filteredCombos = ComboFilterCharacterName(args[1], filteredCombos);
+
+            if (args.Length > 2)
+            {
+                filteredCombos = ComboFilterFromQueryString(args[2], filteredCombos);
+
+                if (args.Length > 3)
+                {
+                    maxDisplay = int.Parse(args[3]);
+                    filteredCombos.RemoveRange(maxDisplay, filteredCombos.Count - maxDisplay);
+                }
+            }
+            else
+                filteredCombos = ComboFilterFromQueryString(_defaultQuery, filteredCombos);
+
+            return filteredCombos.ToArray();
+        }
+
+        private List<Combo> ComboFilterGameName(string game, List<Combo> combos)
+        {
+            return (List<Combo>)combos.Where(combo => combo.game.ToUpper() == game.ToUpper());
+        }
+
+        private List<Combo> ComboFilterCharacterName(string character, List<Combo> combos)
+        {
+            return (List<Combo>)combos.Where(combo => combo.character.ToUpper() == character.ToUpper());
+        }
+
+        private List<Combo> ComboFilterFromQueryString(string query, List<Combo> combos)
+        {
+            
         }
 
         private bool ValidateArgs(string[] args)
         {
-
+            return true; // WIP
         }
 
         public string GrabComboMessage(string[] args)
         {
-            Combo[] combos = GetCombos(args);
+            Combo[] combos = GetFilteredCombos(args);
             string ret = "`";
 
             for (int i = 0; i < combos.Length; i++)

@@ -13,5 +13,6 @@ namespace Lithiumbot.Modules.Dragon_Punch
         public int damage { get; set; }
         public int meter { get; set; }
         public bool corner { get; set; }
+        public bool general { get; set; }
     }
 }

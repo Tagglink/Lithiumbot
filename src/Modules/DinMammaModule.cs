@@ -204,4 +204,17 @@ static class StringArrayExtension {
         else
             return "There is no such index. Please enter a number between 1 and " + list.Length + " (inclusive).";
     }
+
+    /// <summary>
+    /// Converts all strings in an array to upper case
+    /// </summary>
+    /// <param name="arr"></param>
+    /// <returns>A copy of the Upper-Cased array</returns>
+    public static string[] ArrayToUpperCase(string[] arr)
+    {
+        for (int i = 0; i < arr.Length; i++)
+            arr[i] = arr[i].ToUpper();
+
+        return arr;
+    }
 }

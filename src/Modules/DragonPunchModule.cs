@@ -23,7 +23,7 @@ namespace Lithiumbot.Modules
             _client = manager.Client;
             _comboDatabase = new ComboDatabase();
 
-            manager.CreateCommands(String.Empty, group => {
+            manager.CreateCommands(string.Empty, group => {
                 group.CreateGroup("dragonpunch", g => {
                     g.CreateCommand("dpcombo")
                         .Description("Searches for a combo suiting the given parameters.")
@@ -46,6 +46,10 @@ namespace Lithiumbot.Modules
                          *    *cannot be combined with the 'corner' tag
                          * meter[=/>=/<=/</>][percentage]: specifies a meter condition for how much meter the combo requires.
                          *    *For Skullgirls, 20% meter would be 1 bar. For Blazblue or GuiltyGear, 50% meter would be equivalent to 50% Heat/Tension
+                         * bnb: only display combos with the 'bnb' tag. Usually a set of combos for each character that have mediocre damage but
+                         *    showcase some essential links
+                         * all: lists all combos for a character. Might be a little spammy
+                         *    *can only be combined with 'dmg=highest' or 'dmg=lowest'
                          */
                         .Parameter("query", ParameterType.Optional)
 
@@ -61,16 +65,8 @@ namespace Lithiumbot.Modules
 
         private async Task SearchCombo(CommandEventArgs e)
         {
-            try
-            {
-                string comboStr = "This function is incomplete. Tell Tagglink to get his ass to work.";// _comboDatabase.GrabComboMessage(e.Args);
-                await e.Channel.SendMessage(comboStr);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-                await _client.ReplyError(e, ex);
-            }
+            string comboStr = /*"This function is incomplete. Tell Tagglink to get his ass to work.";*/ _comboDatabase.GrabComboMessage(e.Args);
+            await e.Channel.SendMessage(comboStr);
         }
 
         #endregion

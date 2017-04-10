@@ -1,0 +1,15 @@
+{
+	"combos":[
+	{
+		"game":"sg",
+		"character":"parasoul",
+		"message":"c:sg_lk:s:sg_mp:s:sg_hp:x2[:back:(hold):forward::sg_lp:]",
+		"damage":9001,
+		"meter":0,
+		"corner":false
+	},
+	{
+		
+	}
+	]
+}

@@ -26,8 +26,7 @@
     "Discord.Net": "0.9.6",
     "Discord.Net.Commands": "0.9.6",
     "Discord.Net.Modules": "0.9.6",
-    "BungieSharp": "0.1.6"
-  },
+    "BungieSharp": "0.1.6"  },
 
   "frameworks": {
     "net45": {},

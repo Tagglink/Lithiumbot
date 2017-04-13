@@ -1,15 +1,81 @@
 {
-	"combos":[
-	{
-		"game":"sg",
-		"character":"parasoul",
-		"message":"c:sg_lk:s:sg_mp:s:sg_hp:x2[:back:(hold):forward::sg_lp:]",
-		"damage":9001,
-		"meter":0,
-		"corner":false
-	},
-	{
-		
-	}
-	]
+  "gamelist": {
+    "games": [
+      {
+        "name": "GGXRDS",
+        "characters": [
+          {
+            "name": "Sin",
+            "combos": [
+              {
+                "message": ":cf:  v  :cf:",
+                "damage": 9001,
+                "meter": 50,
+                "corner": true,
+                "general": true
+              },
+              {
+                "message": ":cb:  v  :cb:",
+                "damage": 8999,
+                "meter": 0,
+                "corner": false,
+                "general": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "GGXXACPR",
+        "characters": [
+          {
+            "name": "A.B.A",
+            "combos": [
+              {
+                "message": "et cetera",
+                "damage": 9000,
+                "meter": 50,
+                "corner": true,
+                "general": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "BBCPEX",
+        "characters": [
+          {
+            "name": "Amane",
+            "combos": [
+              {
+                "message": "hi",
+                "damage": 100000,
+                "meter": 100,
+                "corner": true,
+                "general": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "SG",
+        "characters": [
+          {
+            "name": "Parasoul",
+            "combos": [
+              {
+                "message": "c:sg_lk:s:sg_mp::sg_hp::sg_hp:xx[Napalm Shot (L)] \n s:sg_mp:[:back~1:+:sg_hk:]*xx[Egret Call] \n [:forward:Dash]s:sg_mk:c:sg_hp: \n j:sg_lp::sg_lk::sg_mp: (land) \n j:sg_mk::sg_hk: \n s:sg_lk::sg_lk::sg_mk::sg_mk::sg_hp::sg_hp:xx[Napalm Pillar]xx[Motor Brigade] \n \n *skip the [:back~1:+:sg_hk:] if you are out of range, cancel s:sg_mp: with Egret Call instead.",
+                "damage": 6744,
+                "meter": 20,
+                "corner": false,
+                "general": true
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

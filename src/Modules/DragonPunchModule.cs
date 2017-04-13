@@ -33,8 +33,6 @@ namespace Lithiumbot.Modules
                         /* tag-based query to sort combos. Tags would for example be 'corner' to only display corner combos, or 'dmg>=1000' to only display
                          * combos with a total damage above or equal to 1000. Multiple tags can be combined with commas: 'corner,dmg>=1000'
                          * 
-                         * corner: displays corner-only combos
-                         *    *cannot be combined with the 'midscreen' tag
                          * dmg[=/>=/<=/</>][number]: specifies a damage condition
                          * dmg=highest: display the combos sorted with highest damage first. 
                          *    *can be combined with dmg[=/>=/<=/</>][number]
@@ -42,6 +40,8 @@ namespace Lithiumbot.Modules
                          * dmg=lowest: display the combos sorted with lowest damage first. 
                          *    *can be combined with dmg[=/>=/<=/</>][number]
                          *    *cannot be combined with dmg=highest
+                         * corner: displays corner-only combos
+                         *    *cannot be combined with the 'midscreen' tag
                          * midscreen: displays combos that are not corner-only. This does not mean they do not work in the corner as well.
                          *    *cannot be combined with the 'corner' tag
                          * meter[=/>=/<=/</>][percentage]: specifies a meter condition for how much meter the combo requires.

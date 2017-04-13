@@ -1,0 +1,117 @@
+{
+  "games": [
+    {
+      "name": "GGXRDS",
+      "characters": [
+        "Sin",
+        "Sol",
+        "Ky",
+        "May",
+        "Millia",
+        "Chipp",
+        "Potemkin",
+        "Faust",
+        "Axl",
+        "Venom",
+        "I-No",
+        "Bedman",
+        "Ramlethal",
+        "Leo",
+        "Elphelt",
+        "Slayer",
+        "ZATO-1"
+      ]
+    },
+    {
+      "name": "GGXXACPR",
+      "characters": [
+        "A.B.A",
+        "Anji",
+        "Axl",
+        "Baiken",
+        "Bridget",
+        "Chipp",
+        "Dizzy",
+        "Eddie",
+        "Faust",
+        "I-No",
+        "Jam",
+        "Johnny",
+        "Justice",
+        "Kliff",
+        "Ky",
+        "May",
+        "Millia",
+        "Order-Sol",
+        "Potemkin",
+        "Robo-Ky",
+        "Slayer",
+        "Sol",
+        "Testament",
+        "Zappa",
+        "Venom"
+      ]
+    },
+    {
+      "name": "BBCPEX",
+      "characters": [
+        "Amane",
+        "Arakune",
+        "Azrael",
+        "Bang",
+        "Bullet",
+        "Carl",
+        "Hakumen",
+        "Hazama",
+        "Izayoi",
+        "Jin",
+        "Kagura",
+        "Kokonoe",
+        "Litchi",
+        "Makoto",
+        "Noel",
+        "Platinum",
+        "Rachel",
+        "Ragna",
+        "Relius",
+        "Tager",
+        "Taokaka",
+        "Tsubaki",
+        "Yuuki",
+        "Valkenhayn",
+        "Mu-12",
+        "Nu-13",
+        "Celica",
+        "Lambda-11"
+      ]
+    },
+    {
+      "name": "SG",
+      "characters": [
+        "Filia",
+        "Fukua",
+        "Parasoul",
+        "Ms.Fortune",
+        "BigBand",
+        "RoboFortune",
+        "Double",
+        "Beowulf",
+        "Painwheel",
+        "Cerebella",
+        "Peacock",
+        "Valentine",
+        "Squigly",
+        "Eliza"
+      ]
+    }
+  ],
+
+  "queries": [
+    "corner",
+    "midscreen",
+    "dmg",
+    "meter",
+    "bnb",
+    "all"
+  ]
+}

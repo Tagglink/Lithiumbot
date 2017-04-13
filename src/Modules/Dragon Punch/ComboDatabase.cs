@@ -1,87 +1,79 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
+using Newtonsoft.Json;
 using System.Threading.Tasks;
 
 namespace Lithiumbot.Modules.Dragon_Punch
 {
     public class ComboDatabase
     {
+        private const string path = "./Modules/Dragon Punch/combos.json";
+        private static ComboDatabase _instance = new ComboDatabase();
+
+        public static void Load()
+        {
+            if (!File.Exists(path))
+                throw new FileNotFoundException($"{path} is missing.");
+            _instance = JsonConvert.DeserializeObject<ComboDatabase>(File.ReadAllText(path));
+        }
+
+        public static void Save()
+        {
+            using (var stream = new FileStream(path, FileMode.Create, FileAccess.Write, FileShare.None))
+            using (var writer = new StreamWriter(stream))
+                writer.Write(JsonConvert.SerializeObject(_instance, Formatting.Indented));
+        }
+
+        public class Combo
+        {
+            [JsonProperty("message")]
+            public string Message;
+            [JsonProperty("damage")]
+            public int Damage;
+            [JsonProperty("meter")]
+            public int Meter;
+            [JsonProperty("corner")]
+            public bool Corner;
+            [JsonProperty("general")]
+            public bool General;
+        }
+
+        public class Character
+        {
+            [JsonProperty("name")]
+            public string Name;
+            [JsonProperty("combos")]
+            public Combo[] Combos;
+        }
+
+        public class FightingGame
+        {
+            [JsonProperty("name")]
+            public string Name;
+            [JsonProperty("characters")]
+            public Character[] Characters;
+        }
+
+        public class GameList
+        {
+            [JsonProperty("games")]
+            public FightingGame[] Games;
+        }
+
+        [JsonProperty("gamelist")]
+        private GameList _gameList = new GameList();
+        public static GameList Gamelist => _instance._gameList;
+
+
+        /*
         private List<Combo> _comboDatabase;
-        private string[] _games;
-        private Dictionary<string, string[]> _characters;
-        private string[] _queries;
         private string _defaultQuery;
 
         public ComboDatabase() // WIP
         {
             _defaultQuery = "bnb";
-
-            _games = new string[] {
-                "GGXS",     // Guilty Gear Xrd -SIGN-
-                "GGXXACPR", // Guilty Gear XX ACCENT CORE PLUS R
-                "BBCPEX",   // BlazBlue: Chronophantasma Extend
-                "SG"        // Skullgirls 2nd Encore
-            };
-
-            _characters = new Dictionary<string, string[]>()
-            {
-                {
-                    "GGXS",
-                    new string[] {
-                    "Jin Kiske"
-                    }
-                },
-                {
-                    "GGXXACPR",
-                    new string[] {
-                    "Jin Kiske"
-                    }
-                },
-                {
-                    "BBCPEX",
-                    new string[] {
-                    "Kokonoe",
-                    "YuukiTerumi",
-                    "Taokaka",
-                    "Azrael",
-                    "NoelVermillion",
-                    "Platinum",
-                    "No.13",
-                    "No.12",
-                    "No.11"
-                    }
-                },
-                {
-                    "SG",
-                    new string[] {
-                    "Filia",
-                    "Fukua",
-                    "Parasoul",
-                    "Ms.Fortune",
-                    "BigBand",
-                    "RoboFortune",
-                    "Double",
-                    "Beowulf",
-                    "Painwheel",
-                    "Cerebella",
-                    "Peacock",
-                    "Valentine",
-                    "",
-                    ""
-                    }
-                }
-            };
-
-            _queries = new string[]
-            {
-                "corner",
-                "midscreen",
-                "dmg",
-                "meter",
-                "bnb",
-                "all"
-            };
         }
 
 
@@ -92,6 +84,8 @@ namespace Lithiumbot.Modules.Dragon_Punch
          *  2 - query string (optional)
          *  3 - max display (optional)
          */
+
+        /*
         private Combo[] GetFilteredCombos(string[] args)
         {
             List<Combo> filteredCombos = _comboDatabase;
@@ -159,5 +153,6 @@ namespace Lithiumbot.Modules.Dragon_Punch
 
             return ret;
         }
+        */
     }
 }
